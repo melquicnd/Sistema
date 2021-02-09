@@ -1,0 +1,9 @@
+﻿Nome , Descrição , valor
+xtudo / pao,aufase.molhor especial / 24
+xratao / pao e rato / 47
+mega Ratao / o bicho é bolado / 250
+xxRatao / o bicho é bolado / 444 / 
+big Ratão / esse faz mal / 55 /
+x Podrao / tem que ter um vaso bom / 44444 /
+xxPodrao  / Aviso tem que chamar a anbulancia antes de comesar a comer / 2000 /
+

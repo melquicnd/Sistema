@@ -1,0 +1,3804 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package visão;
+
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+import javax.swing.ProgressMonitorInputStream;
+
+
+import aluno.AlumnoVIP;
+import aluno.AlumnoParaUsuario;
+import java.awt.Color;
+import java.awt.Desktop;
+import metodos.MetodosParaUsuario;
+import java.awt.HeadlessException;
+import java.awt.Image;
+import java.awt.List;
+import java.awt.PopupMenu;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Reader;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.StringTokenizer;
+import java.util.Vector;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import java.util.logging.Level;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import metodos.Metodos;
+import metodos.MetodosParaUsuario;
+import metodos.MetodosVIP;
+import javax.swing.JProgressBar;
+import static org.eclipse.persistence.jpa.jpql.utility.CollectionTools.array;
+
+public class PerfilDoCliente extends javax.swing.JFrame {
+    
+    public Timer t;
+    public ActionListener al;
+    
+    JProgressBar barra = new JProgressBar();
+   // AlumnoParaUsuario alumnoParaUsuario = new AlumnoParaUsuario();
+    MetodosParaUsuario metodosParaUsuario = new MetodosParaUsuario();
+   // Vector vCabeceras = new Vector();
+    //private Object model; 
+    
+    AlumnoVIP alumno = new AlumnoVIP();
+    MetodosVIP metodos = new MetodosVIP();
+    
+    
+    public PerfilDoCliente() {
+        initComponents();
+        
+
+        
+        
+
+        
+       /* cbo_select.addItem("Lima");
+        cbo_select.addItem("Chiclayo");
+        cbo_select.addItem("Trunjillo");
+        cbo_select.addItem("Cajamarca");
+        cbo_select.addItem("Chimbote");
+        cbo_select.addItem("Pirura");
+        cbo_select.addItem("Trumbes"); */
+        
+        metodosParaUsuario.cboSelect(cbo_quat);
+        
+        txT_EnderecoUSUARIO.setBackground(new java.awt.Color(0,0,0,0));
+        txT_NomeUSUARIO.setBackground(new java.awt.Color(0,0,0,0));
+        txT_BairroUSUARIO.setBackground(new java.awt.Color(0,0,0,0));
+        txT_NumeroUSUARIO.setBackground(new java.awt.Color(0,0,0,0));
+        txT_AniversarioUSUARIO.setBackground(new java.awt.Color(0,0,0,0));
+        txT_EmailUSUARIO.setBackground(new java.awt.Color(0,0,0,0));
+        txT_whatsUSUARIO1.setBackground(new java.awt.Color(0,0,0,0));
+        txT_CelularUSUARIO2.setBackground(new java.awt.Color(0,0,0,0));
+        txT_ObiservacoesUSUARIO1.setBackground(new java.awt.Color(0,0,0,0));
+        jButtonlink.setBackground(new java.awt.Color(0,0,0,0));
+        jButton1.setBackground(new java.awt.Color(0,0,0,0));
+        jButton777.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField71.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField72.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField3.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField4.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField1.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField2.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField6.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField5.setBackground(new java.awt.Color(0,0,0,0));
+        jTestfildbig.setBackground(new java.awt.Color(0,0,0,0));
+        
+      //  jTextField8.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField9.setBackground(new java.awt.Color(0,0,0,0));
+       // jTextField10.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField11.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField14.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField15.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField16.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField17.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField18.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField19.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField20.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField21.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField22.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField23.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField24.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField25.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField26.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField27.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField28.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField29.setBackground(new java.awt.Color(0,0,0,0));
+        
+        jTextField13.setBackground(new java.awt.Color(0,0,0,0));
+         jTextField31.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField32.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField33.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField34.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField35.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField36.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField37.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField38.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField39.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField40.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField41.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField42.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField43.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField44.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField45.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField46.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField47.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField48.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField49.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField70.setBackground(new java.awt.Color(0,0,0,0));
+        
+        jTextField50.setBackground(new java.awt.Color(0,0,0,0));
+         jTextField51.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField52.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField53.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField54.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField55.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField56.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField57.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField58.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField59.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField60.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField61.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField62.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField63.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField64.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField65.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField66.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField67.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField68.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField69.setBackground(new java.awt.Color(0,0,0,0));
+        
+        
+       // t=new Timer(100,al);
+        
+        
+        
+       }
+    
+    
+    
+       public void imagemIcon() {
+           
+
+         String caminho =  txT_Numero.getText();
+         
+        ImageIcon img = new ImageIcon("'"+caminho+"'");
+        jLabel17.setIcon(img);
+                   
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        texREs = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jFrame1 = new javax.swing.JFrame();
+        txT_EnderecoUSUARIO1 = new javax.swing.JTextField();
+        txT_NumeroUSUARIO1 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txT_BairroUSUARIO1 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        txT_CodigoUSUARIO1 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        txT_dataUSUARIO1 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        txT_AniversarioUSUARIO1 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        txT_EmailUSUARIO1 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        txT_whatsUSUARIO2 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        txT_CelularUSUARIO3 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txT_ObiservacoesUSUARIO2 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jTextFieldPath1 = new javax.swing.JTextField();
+        txT_Numero1 = new javax.swing.JTextField();
+        jButtonlink1 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txT_CodigoUSUARIO = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextFieldPath = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txT_dataUSUARIO = new javax.swing.JTextField();
+        txT_EnderecoUSUARIO2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txT_Numero = new javax.swing.JTextField();
+        txT_BairroUSUARIO = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        txT_CelularUSUARIO2 = new javax.swing.JTextField();
+        cbo_select = new javax.swing.JComboBox<>();
+        jButtonlink = new javax.swing.JButton();
+        txT_AniversarioUSUARIO = new javax.swing.JTextField();
+        txT_ObiservacoesUSUARIO1 = new javax.swing.JTextField();
+        txT_NumeroUSUARIO = new javax.swing.JTextField();
+        txT_NomeUSUARIO = new javax.swing.JTextField();
+        txT_EnderecoUSUARIO = new javax.swing.JTextField();
+        txT_whatsUSUARIO1 = new javax.swing.JTextField();
+        txT_EmailUSUARIO = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        cbo_quat = new javax.swing.JComboBox<>();
+        jButton777 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jTextField3 = new javax.swing.JTextField();
+        javax.swing.JButton jButton4 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTestfildbig = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jTextField13not = new javax.swing.JTextField();
+        jTextField14 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
+        jTextField16 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        jTextField21 = new javax.swing.JTextField();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        jTextField25 = new javax.swing.JTextField();
+        jTextField26 = new javax.swing.JTextField();
+        jTextField27 = new javax.swing.JTextField();
+        jTextField28 = new javax.swing.JTextField();
+        jTextField29 = new javax.swing.JTextField();
+        jTextField30 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jTextField12 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField31 = new javax.swing.JTextField();
+        jTextField32 = new javax.swing.JTextField();
+        jTextField34 = new javax.swing.JTextField();
+        jTextField33 = new javax.swing.JTextField();
+        jTextField35 = new javax.swing.JTextField();
+        jTextField36 = new javax.swing.JTextField();
+        jTextField37 = new javax.swing.JTextField();
+        jTextField38 = new javax.swing.JTextField();
+        jTextField39 = new javax.swing.JTextField();
+        jTextField40 = new javax.swing.JTextField();
+        jTextField41 = new javax.swing.JTextField();
+        jTextField42 = new javax.swing.JTextField();
+        jTextField43 = new javax.swing.JTextField();
+        jTextField44 = new javax.swing.JTextField();
+        jTextField45 = new javax.swing.JTextField();
+        jTextField46 = new javax.swing.JTextField();
+        jTextField47 = new javax.swing.JTextField();
+        jTextField48 = new javax.swing.JTextField();
+        jTextField49 = new javax.swing.JTextField();
+        jTextField50 = new javax.swing.JTextField();
+        jTextField51 = new javax.swing.JTextField();
+        jTextField52 = new javax.swing.JTextField();
+        jTextField53 = new javax.swing.JTextField();
+        jTextField54 = new javax.swing.JTextField();
+        jTextField55 = new javax.swing.JTextField();
+        jTextField56 = new javax.swing.JTextField();
+        jTextField57 = new javax.swing.JTextField();
+        jTextField58 = new javax.swing.JTextField();
+        jTextField59 = new javax.swing.JTextField();
+        jTextField60 = new javax.swing.JTextField();
+        jTextField61 = new javax.swing.JTextField();
+        jTextField62 = new javax.swing.JTextField();
+        jTextField63 = new javax.swing.JTextField();
+        jTextField64 = new javax.swing.JTextField();
+        jTextField65 = new javax.swing.JTextField();
+        jTextField66 = new javax.swing.JTextField();
+        jTextField67 = new javax.swing.JTextField();
+        jTextField68 = new javax.swing.JTextField();
+        jTextField69 = new javax.swing.JTextField();
+        jTextField70 = new javax.swing.JTextField();
+        jTextField71 = new javax.swing.JTextField();
+        jTextField72 = new javax.swing.JTextField();
+        cbo_Conplementos = new javax.swing.JComboBox<>();
+        jTextField73 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jTextField74 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jTextField75 = new javax.swing.JTextField();
+        jTextField76 = new javax.swing.JTextField();
+        jTextField77 = new javax.swing.JTextField();
+        jTextField78 = new javax.swing.JTextField();
+        jTextField79 = new javax.swing.JTextField();
+        jTextField80 = new javax.swing.JTextField();
+        jTextField81 = new javax.swing.JTextField();
+        jTextField82 = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel14.setText("Selecione o produto");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setText("quantidade");
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Confirmar Pedido ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("Total:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(351, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(57, 57, 57)
+                .addComponent(texREs, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(texREs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(29, 29, 29)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jLabel18.setText("Endereço");
+
+        jFrame1.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                jFrame1formWindowOpened(evt);
+            }
+        });
+
+        txT_EnderecoUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_EnderecoUSUARIO1ActionPerformed(evt);
+            }
+        });
+
+        txT_NumeroUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_NumeroUSUARIO1ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Numero");
+
+        txT_BairroUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_BairroUSUARIO1ActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Bairro");
+
+        txT_CodigoUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_CodigoUSUARIO1ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Codigo");
+
+        txT_dataUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_dataUSUARIO1ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("Data do Cadastro");
+
+        txT_AniversarioUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_AniversarioUSUARIO1ActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("Aniversario");
+
+        txT_EmailUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_EmailUSUARIO1ActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setText("Email");
+
+        txT_whatsUSUARIO2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_whatsUSUARIO2ActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("WhatsApp");
+
+        txT_CelularUSUARIO3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_CelularUSUARIO3ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("Celular");
+
+        txT_ObiservacoesUSUARIO2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_ObiservacoesUSUARIO2ActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setText("Obiservações");
+
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cliente.png"))); // NOI18N
+        jLabel28.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
+
+        txT_Numero1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_Numero1ActionPerformed(evt);
+            }
+        });
+
+        jButtonlink1.setText("whatzap");
+        jButtonlink1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonlink1ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("jLabel2");
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(227, 227, 227)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addComponent(txT_Numero1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177)
+                .addComponent(jButtonlink1)
+                .addContainerGap(719, Short.MAX_VALUE))
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jFrame1Layout.createSequentialGroup()
+                                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
+                                            .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txT_CodigoUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel21)
+                                                .addComponent(jLabel24))
+                                            .addGap(464, 464, 464))
+                                        .addComponent(txT_EmailUSUARIO1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jFrame1Layout.createSequentialGroup()
+                                            .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txT_whatsUSUARIO2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel25))
+                                            .addGap(45, 45, 45)
+                                            .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel26)
+                                                .addComponent(txT_CelularUSUARIO3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jFrame1Layout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(txT_EnderecoUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(40, 40, 40)
+                                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txT_NumeroUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel19)
+                                            .addComponent(txT_dataUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel22))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel27)
+                                        .addComponent(txT_ObiservacoesUSUARIO2, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE))
+                            .addGroup(jFrame1Layout.createSequentialGroup()
+                                .addGap(367, 367, 367)
+                                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel20)
+                                    .addComponent(txT_BairroUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txT_AniversarioUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel23))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE))))
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldPath1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 644, Short.MAX_VALUE)))
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(279, 279, 279))
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jButtonlink1)
+                .addGap(133, 133, 133)
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jFrame1Layout.createSequentialGroup()
+                                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel20))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txT_EnderecoUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txT_NumeroUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txT_BairroUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(61, 61, 61))
+                            .addGroup(jFrame1Layout.createSequentialGroup()
+                                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txT_CodigoUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txT_dataUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txT_AniversarioUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel24)
+                        .addGap(10, 10, 10)
+                        .addComponent(txT_EmailUSUARIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel26))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txT_whatsUSUARIO2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txT_CelularUSUARIO3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txT_ObiservacoesUSUARIO2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldPath1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(txT_Numero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Perfil Do Cliente");
+        jLabel1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jLabel1FocusLost(evt);
+            }
+        });
+
+        jLabel4.setText("Nome");
+
+        jLabel7.setText("Bairro");
+
+        jLabel6.setText("Numero");
+
+        txT_CodigoUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_CodigoUSUARIOActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Codigo");
+
+        jLabel10.setText("Aniversario");
+
+        jLabel9.setText("Data do Cadastro");
+
+        jLabel11.setText("Email");
+
+        jLabel13.setText("Celular");
+
+        jLabel15.setText("Obiservações");
+
+        jLabel12.setText("WhatsApp");
+
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cliente.png"))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
+
+        jLabel2.setText("jLabel2");
+
+        txT_dataUSUARIO.setBackground(new java.awt.Color(82, 94, 108));
+        txT_dataUSUARIO.setBorder(null);
+        txT_dataUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_dataUSUARIOActionPerformed(evt);
+            }
+        });
+
+        txT_EnderecoUSUARIO2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_EnderecoUSUARIO2ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Endereço");
+
+        txT_Numero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_NumeroActionPerformed(evt);
+            }
+        });
+
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+        getContentPane().setLayout(null);
+
+        txT_BairroUSUARIO.setBorder(null);
+        txT_BairroUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_BairroUSUARIOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_BairroUSUARIO);
+        txT_BairroUSUARIO.setBounds(100, 330, 150, 40);
+
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(760, 10, 0, 20);
+
+        txT_CelularUSUARIO2.setBorder(null);
+        txT_CelularUSUARIO2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_CelularUSUARIO2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_CelularUSUARIO2);
+        txT_CelularUSUARIO2.setBounds(360, 470, 260, 30);
+
+        cbo_select.setToolTipText("xtudo");
+        cbo_select.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbo_selectItemStateChanged(evt);
+            }
+        });
+        cbo_select.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbo_selectMouseClicked(evt);
+            }
+        });
+        cbo_select.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbo_selectActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbo_select);
+        cbo_select.setBounds(730, 90, 380, 40);
+
+        jButtonlink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonlinkActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonlink);
+        jButtonlink.setBounds(640, 140, 50, 40);
+
+        txT_AniversarioUSUARIO.setBorder(null);
+        txT_AniversarioUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_AniversarioUSUARIOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_AniversarioUSUARIO);
+        txT_AniversarioUSUARIO.setBounds(470, 330, 160, 40);
+
+        txT_ObiservacoesUSUARIO1.setBackground(new java.awt.Color(82, 94, 108));
+        txT_ObiservacoesUSUARIO1.setBorder(null);
+        txT_ObiservacoesUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_ObiservacoesUSUARIO1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_ObiservacoesUSUARIO1);
+        txT_ObiservacoesUSUARIO1.setBounds(90, 540, 530, 90);
+
+        txT_NumeroUSUARIO.setBorder(null);
+        txT_NumeroUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_NumeroUSUARIOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_NumeroUSUARIO);
+        txT_NumeroUSUARIO.setBounds(280, 330, 160, 40);
+
+        txT_NomeUSUARIO.setBackground(new java.awt.Color(82, 94, 108));
+        txT_NomeUSUARIO.setBorder(null);
+        txT_NomeUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_NomeUSUARIOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_NomeUSUARIO);
+        txT_NomeUSUARIO.setBounds(100, 200, 520, 30);
+
+        txT_EnderecoUSUARIO.setBorder(null);
+        txT_EnderecoUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_EnderecoUSUARIOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_EnderecoUSUARIO);
+        txT_EnderecoUSUARIO.setBounds(100, 260, 510, 30);
+
+        txT_whatsUSUARIO1.setBorder(null);
+        txT_whatsUSUARIO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_whatsUSUARIO1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_whatsUSUARIO1);
+        txT_whatsUSUARIO1.setBounds(100, 470, 240, 30);
+
+        txT_EmailUSUARIO.setBackground(new java.awt.Color(82, 94, 108));
+        txT_EmailUSUARIO.setBorder(null);
+        txT_EmailUSUARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txT_EmailUSUARIOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txT_EmailUSUARIO);
+        txT_EmailUSUARIO.setBounds(100, 400, 520, 40);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(760, 30, 0, 20);
+
+        jButton1.setText("finlisar pedido");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(1030, 520, 140, 70);
+
+        cbo_quat.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbo_quatItemStateChanged(evt);
+            }
+        });
+        cbo_quat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbo_quatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbo_quat);
+        cbo_quat.setBounds(1120, 90, 60, 40);
+
+        jButton777.setRequestFocusEnabled(false);
+        jButton777.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton777ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton777);
+        jButton777.setBounds(640, 190, 50, 50);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Lanches ", "valor", "quantidade"
+            }
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(120);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(120);
+        }
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(730, 180, 450, 320);
+
+        jTextField3.setBorder(null);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(820, 10, 0, 20);
+
+        jButton4.setText("apagar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(1190, 290, 67, 80);
+
+        jTextField4.setBorder(null);
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(820, 30, 0, 20);
+
+        jTextField6.setBorder(null);
+        getContentPane().add(jTextField6);
+        jTextField6.setBounds(430, 20, 0, 14);
+
+        jTextField5.setBorder(null);
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(430, 40, 0, 14);
+
+        jTestfildbig.setBorder(null);
+        getContentPane().add(jTestfildbig);
+        jTestfildbig.setBounds(430, 60, 0, 14);
+
+        jTextField7.setBorder(null);
+        getContentPane().add(jTextField7);
+        jTextField7.setBounds(560, 180, 0, 0);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Título 4", "Título 5", "Título 6", "Título 7", "Título 8", "Título 9", "Título 10"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(120, 90, 230, 110);
+
+        jTextField8.setBorder(null);
+        getContentPane().add(jTextField8);
+        jTextField8.setBounds(0, 100, 110, 20);
+
+        jTextField9.setBorder(null);
+        getContentPane().add(jTextField9);
+        jTextField9.setBounds(0, 120, 0, 14);
+
+        jTextField10.setBorder(null);
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField10);
+        jTextField10.setBounds(0, 140, 110, 14);
+
+        jTextField11.setBorder(null);
+        getContentPane().add(jTextField11);
+        jTextField11.setBounds(0, 160, 0, 14);
+
+        jToggleButton1.setText("caucular");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton1);
+        jToggleButton1.setBounds(920, 570, 73, 23);
+        getContentPane().add(jTextField13not);
+        jTextField13not.setBounds(730, 510, 200, 40);
+
+        jTextField14.setBorder(null);
+        getContentPane().add(jTextField14);
+        jTextField14.setBounds(0, 180, 0, 14);
+
+        jTextField15.setBorder(null);
+        getContentPane().add(jTextField15);
+        jTextField15.setBounds(0, 200, 0, 14);
+
+        jTextField16.setBorder(null);
+        getContentPane().add(jTextField16);
+        jTextField16.setBounds(0, 220, 0, 14);
+
+        jTextField17.setBorder(null);
+        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField17);
+        jTextField17.setBounds(0, 240, 0, 14);
+
+        jTextField18.setBorder(null);
+        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField18ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField18);
+        jTextField18.setBounds(0, 260, 0, 14);
+
+        jTextField19.setBorder(null);
+        getContentPane().add(jTextField19);
+        jTextField19.setBounds(0, 280, 0, 14);
+
+        jTextField20.setBorder(null);
+        getContentPane().add(jTextField20);
+        jTextField20.setBounds(0, 300, 0, 14);
+
+        jTextField21.setBorder(null);
+        getContentPane().add(jTextField21);
+        jTextField21.setBounds(0, 320, 0, 14);
+
+        jTextField22.setBorder(null);
+        getContentPane().add(jTextField22);
+        jTextField22.setBounds(0, 340, 0, 14);
+
+        jTextField23.setBorder(null);
+        getContentPane().add(jTextField23);
+        jTextField23.setBounds(0, 360, 0, 14);
+
+        jTextField24.setBorder(null);
+        getContentPane().add(jTextField24);
+        jTextField24.setBounds(0, 380, 0, 14);
+
+        jTextField25.setBorder(null);
+        getContentPane().add(jTextField25);
+        jTextField25.setBounds(0, 400, 0, 14);
+
+        jTextField26.setBorder(null);
+        getContentPane().add(jTextField26);
+        jTextField26.setBounds(0, 420, 0, 14);
+
+        jTextField27.setBorder(null);
+        jTextField27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField27ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField27);
+        jTextField27.setBounds(0, 440, 0, 14);
+
+        jTextField28.setBorder(null);
+        getContentPane().add(jTextField28);
+        jTextField28.setBounds(0, 460, 0, 14);
+
+        jTextField29.setBorder(null);
+        getContentPane().add(jTextField29);
+        jTextField29.setBounds(0, 480, 0, 14);
+
+        jTextField30.setText("0");
+        getContentPane().add(jTextField30);
+        jTextField30.setBounds(720, 600, 190, 30);
+
+        jButton5.setText("jButton5");
+        jButton5.setBorder(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(440, 120, 0, 15);
+
+        jTextField12.setBorder(null);
+        getContentPane().add(jTextField12);
+        jTextField12.setBounds(260, 130, 0, 14);
+
+        jButton6.setText("caucar 2");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(920, 600, 90, 23);
+
+        jButton7.setText("jButton7");
+        jButton7.setBorder(null);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7);
+        jButton7.setBounds(370, 170, 0, 15);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(1330, 640, 10, 10);
+
+        jTextField13.setBorder(null);
+        getContentPane().add(jTextField13);
+        jTextField13.setBounds(0, 520, 0, 14);
+
+        jTextField31.setBorder(null);
+        getContentPane().add(jTextField31);
+        jTextField31.setBounds(0, 540, 0, 14);
+
+        jTextField32.setBorder(null);
+        getContentPane().add(jTextField32);
+        jTextField32.setBounds(0, 560, 0, 14);
+
+        jTextField34.setBorder(null);
+        jTextField34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField34ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField34);
+        jTextField34.setBounds(0, 600, 0, 14);
+
+        jTextField33.setBorder(null);
+        getContentPane().add(jTextField33);
+        jTextField33.setBounds(0, 580, 0, 14);
+
+        jTextField35.setBorder(null);
+        getContentPane().add(jTextField35);
+        jTextField35.setBounds(0, 620, 0, 14);
+
+        jTextField36.setBorder(null);
+        getContentPane().add(jTextField36);
+        jTextField36.setBounds(0, 640, 0, 14);
+
+        jTextField37.setBorder(null);
+        getContentPane().add(jTextField37);
+        jTextField37.setBounds(90, 640, 0, 14);
+
+        jTextField38.setBorder(null);
+        getContentPane().add(jTextField38);
+        jTextField38.setBounds(160, 640, 0, 14);
+
+        jTextField39.setBorder(null);
+        jTextField39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField39ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField39);
+        jTextField39.setBounds(230, 640, 0, 14);
+
+        jTextField40.setBorder(null);
+        getContentPane().add(jTextField40);
+        jTextField40.setBounds(300, 640, 0, 14);
+
+        jTextField41.setBorder(null);
+        getContentPane().add(jTextField41);
+        jTextField41.setBounds(370, 640, 0, 14);
+
+        jTextField42.setBorder(null);
+        getContentPane().add(jTextField42);
+        jTextField42.setBounds(430, 640, 0, 10);
+
+        jTextField43.setBorder(null);
+        getContentPane().add(jTextField43);
+        jTextField43.setBounds(510, 640, 0, 14);
+
+        jTextField44.setBorder(null);
+        jTextField44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField44ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField44);
+        jTextField44.setBounds(580, 640, 0, 14);
+
+        jTextField45.setBorder(null);
+        getContentPane().add(jTextField45);
+        jTextField45.setBounds(650, 640, 0, 14);
+
+        jTextField46.setBorder(null);
+        getContentPane().add(jTextField46);
+        jTextField46.setBounds(730, 640, 0, 14);
+
+        jTextField47.setBorder(null);
+        getContentPane().add(jTextField47);
+        jTextField47.setBounds(800, 640, 0, 14);
+
+        jTextField48.setBorder(null);
+        getContentPane().add(jTextField48);
+        jTextField48.setBounds(870, 640, 0, 14);
+
+        jTextField49.setBorder(null);
+        getContentPane().add(jTextField49);
+        jTextField49.setBounds(940, 640, 0, 14);
+
+        jTextField50.setBorder(null);
+        getContentPane().add(jTextField50);
+        jTextField50.setBounds(1270, 0, 0, 14);
+
+        jTextField51.setBorder(null);
+        getContentPane().add(jTextField51);
+        jTextField51.setBounds(1270, 20, 0, 14);
+
+        jTextField52.setBorder(null);
+        getContentPane().add(jTextField52);
+        jTextField52.setBounds(1270, 40, 0, 14);
+
+        jTextField53.setBorder(null);
+        getContentPane().add(jTextField53);
+        jTextField53.setBounds(1270, 60, 0, 14);
+
+        jTextField54.setBorder(null);
+        getContentPane().add(jTextField54);
+        jTextField54.setBounds(1270, 80, 0, 14);
+
+        jTextField55.setBorder(null);
+        getContentPane().add(jTextField55);
+        jTextField55.setBounds(1270, 100, 0, 14);
+
+        jTextField56.setBorder(null);
+        getContentPane().add(jTextField56);
+        jTextField56.setBounds(1270, 120, 0, 14);
+
+        jTextField57.setBorder(null);
+        getContentPane().add(jTextField57);
+        jTextField57.setBounds(1270, 140, 0, 14);
+
+        jTextField58.setBorder(null);
+        getContentPane().add(jTextField58);
+        jTextField58.setBounds(1270, 160, 0, 14);
+
+        jTextField59.setBorder(null);
+        jTextField59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField59ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField59);
+        jTextField59.setBounds(1270, 180, 0, 14);
+
+        jTextField60.setBorder(null);
+        getContentPane().add(jTextField60);
+        jTextField60.setBounds(1270, 200, 0, 14);
+
+        jTextField61.setBorder(null);
+        getContentPane().add(jTextField61);
+        jTextField61.setBounds(1270, 220, 0, 14);
+
+        jTextField62.setBorder(null);
+        getContentPane().add(jTextField62);
+        jTextField62.setBounds(1270, 240, 0, 14);
+
+        jTextField63.setBorder(null);
+        getContentPane().add(jTextField63);
+        jTextField63.setBounds(1270, 260, 0, 20);
+
+        jTextField64.setBorder(null);
+        getContentPane().add(jTextField64);
+        jTextField64.setBounds(1270, 280, 0, 14);
+
+        jTextField65.setBorder(null);
+        getContentPane().add(jTextField65);
+        jTextField65.setBounds(1270, 300, 0, 14);
+
+        jTextField66.setBorder(null);
+        getContentPane().add(jTextField66);
+        jTextField66.setBounds(1270, 320, 0, 14);
+
+        jTextField67.setBorder(null);
+        getContentPane().add(jTextField67);
+        jTextField67.setBounds(1270, 340, 0, 14);
+
+        jTextField68.setBorder(null);
+        getContentPane().add(jTextField68);
+        jTextField68.setBounds(1270, 360, 0, 14);
+
+        jTextField69.setBorder(null);
+        getContentPane().add(jTextField69);
+        jTextField69.setBounds(1270, 380, 0, 14);
+
+        jTextField70.setBorder(null);
+        getContentPane().add(jTextField70);
+        jTextField70.setBounds(90, 510, 0, 14);
+
+        jTextField71.setBorder(null);
+        getContentPane().add(jTextField71);
+        jTextField71.setBounds(1200, 10, 0, 14);
+
+        jTextField72.setBorder(null);
+        jTextField72.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField72ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField72);
+        jTextField72.setBounds(920, 20, 0, 14);
+
+        cbo_Conplementos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbo_ConplementosMouseClicked(evt);
+            }
+        });
+        cbo_Conplementos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbo_ConplementosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbo_Conplementos);
+        cbo_Conplementos.setBounds(790, 150, 310, 20);
+        getContentPane().add(jTextField73);
+        jTextField73.setBounds(560, 70, 80, 20);
+
+        jLabel33.setText("jLabel33");
+        getContentPane().add(jLabel33);
+        jLabel33.setBounds(640, 260, 50, 60);
+
+        jTextField74.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField74ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField74);
+        jTextField74.setBounds(560, 90, 70, 20);
+
+        jButton3.setText("caucaar3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(920, 630, 90, 23);
+        getContentPane().add(jTextField75);
+        jTextField75.setBounds(690, 10, 80, 20);
+
+        jTextField76.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField76ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField76);
+        jTextField76.setBounds(690, 30, 80, 20);
+
+        jTextField77.setText("jTextField77");
+        getContentPane().add(jTextField77);
+        jTextField77.setBounds(690, 50, 80, 20);
+
+        jTextField78.setText("jTextField78");
+        getContentPane().add(jTextField78);
+        jTextField78.setBounds(690, 70, 80, 20);
+
+        jTextField79.setText("jTextField79");
+        getContentPane().add(jTextField79);
+        jTextField79.setBounds(770, 70, 80, 20);
+        getContentPane().add(jTextField80);
+        jTextField80.setBounds(0, 560, 70, 20);
+
+        jTextField81.setText("jTextField81");
+        getContentPane().add(jTextField81);
+        jTextField81.setBounds(770, 50, 80, 20);
+
+        jTextField82.setText("jTextField82");
+        getContentPane().add(jTextField82);
+        jTextField82.setBounds(940, 0, 90, 20);
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/8.png"))); // NOI18N
+        jLabel30.setText("jLabel30");
+        jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel30MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel30);
+        jLabel30.setBounds(0, 0, 1300, 660);
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        jLabel31.setText("jLabel31");
+        getContentPane().add(jLabel31);
+        jLabel31.setBounds(1300, -10, 40, 520);
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        jLabel32.setText("jLabel32");
+        getContentPane().add(jLabel32);
+        jLabel32.setBounds(1300, 500, 437, 160);
+
+        setSize(new java.awt.Dimension(1356, 697));
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+
+       
+        
+        
+        
+        
+        
+        
+        File file = new File("C:\\Arquivos do programa/ControleDaTabela.txt");
+        
+        if(file.exists()) {
+        file.delete();
+            try {
+                FileWriter fw = new FileWriter("C:\\Arquivos do programa/ControleDaTabela.txt");
+                 
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println("Valor1,Valor2,Valor3,Valor4,Valor,5,Valor6"); 
+            pw.flush();
+            pw.close();
+            fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+
+
+        
+        
+        
+      
+    
+        
+        
+        File arquivo = new File("C:\\Arquivos do programa/Alumnos.txt");  
+
+      try {
+          FileReader fr = new FileReader(arquivo);   
+           BufferedReader br = new BufferedReader(fr);
+           
+
+                String linha = br.readLine();
+                
+                
+                cbo_select.addItem("Selecione o serviço");
+                
+                while(linha != null){
+                    cbo_select.addItem(linha);
+                   
+                    linha = br.readLine();
+                } 
+                              
+
+            
+              
+   } catch (Exception ex) {
+        Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+    }
+              File Arquivo = new File("C:\\Arquivos do programa/Complementos.txt");  
+
+      try {
+          FileReader fr = new FileReader(Arquivo);   
+           BufferedReader br = new BufferedReader(fr);
+           
+
+                String linha = br.readLine();
+                
+                
+                cbo_Conplementos.addItem("Selecione o serviço");
+                
+                while(linha != null){
+                    cbo_Conplementos.addItem(linha);
+                   
+                    linha = br.readLine();
+                } 
+                              
+
+            
+              
+   } catch (Exception ex) {
+        Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
+  
+        
+   /* String filePath = ("C://Users/henrique matheus/Documents/NetBeansProjects/AplicacaoAnbiente/Lanches.txt");
+    File fie = new File(filePath);
+
+    try {
+        BufferedReader br = new BufferedReader(new FileReader(fie));
+        String firstLine = br.readLine().trim();
+        String[] columnsName = firstLine.split(",");
+        DefaultTableModel model = (DefaultTableModel)jTableDados.getModel();
+        model.setColumnIdentifiers(columnsName);
+        
+        
+        Object[] tableLines = br.lines().toArray();
+        
+        for(int i = 0; 1 < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split("/");
+                model.addRow(dataRow); 
+  
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //cbo_select.addItem("hello");
+         File arquivo = new File ("C://Users/henrique matheus/Documents/NetBeansProjects/AplicacaoAnbiente/Alumnos.txt");
+    
+        try {
+            FileReader fr = new FileReader(arquivo);
+            BufferedReader br = new BufferedReader(fr);
+            //String linha = br.readLine();
+            String d;  //new
+            while((d=br.readLine())!=null){
+                StringTokenizer dato = new StringTokenizer(d,"|");
+                Vector x = new Vector();
+                while(dato.hasMoreTokens()){
+                    x.addElement(dato.nextToken());
+                }
+                cbo_select.addItem(x.toString());
+               
+            }
+            
+            // fim
+            
+            cbo_select.addItem("Selecione o lanche");
+            
+           
+            
+            
+           // while(linha != null){
+         //       cbo_select.addItem(linha);
+                
+                
+         //       linha = br.readLine();
+
+         //   }
+            fr.close();
+        } catch (Exception ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+
+        }*/
+        //int selecionado = jtTabelaNome.getSelectedRow();   
+      //  txT_NomeUSUARIO.setText((java.lang.String) jtTabelaNome.getValueAt(selecionado,0)); //coluna é a coluna da tabela que você quer pegar a informação. Você pode colocar diretamente o número da coluna. Ex.: 0, 1, 2, etc....   
+    
+    
+    }//GEN-LAST:event_formWindowOpened
+
+    private void cbo_selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_selectActionPerformed
+                                  
+        //cbo_select.getSelectedItem();
+       // int indexs[] = 
+        
+      // BufferedReader br = new BufferedReader(cbo_select.getSelectedItem().toString());
+      // String firstLine = br .readLine();
+       
+    }//GEN-LAST:event_cbo_selectActionPerformed
+
+    private void cbo_quatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_quatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbo_quatActionPerformed
+
+    private void cbo_selectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbo_selectItemStateChanged
+        String box1 = cbo_select.getSelectedItem().toString();
+        String boxy1 = cbo_quat.getSelectedItem().toString();
+       // jTextField1.setText("O valor "+box1+" a quntidade é "+boxy1);
+       
+       
+       
+       
+       
+        /* String ciudad=(String)cbo_select.getSelectedItem();
+     if(ciudad.equals("Lima"))
+        {
+           jTextField1.setText("Cidade de los Reyes");
+        }
+        if(ciudad.equals("Chiclayo"))
+        {
+            jTextField1.setText("Cidade de los Amistad");
+        }
+        if(ciudad.equals("Trunjillo"))
+        {
+            jTextField1.setText("Cidade de  las prima");
+        }
+        if(ciudad.equals("Cajamarca"))
+        {
+            jTextField1.setText("Cidade de los animacion");
+        }
+        if(ciudad.equals("Pirura"))  
+        {
+            jTextField1.setText("Cidade de Pirula!! ");
+        }
+        if(ciudad.equals("Trumbes"))
+        {
+            jTextField1.setText("Cidade uy bonita");
+        }
+     //   String box = cbo_select.getSelectedItem().toString(); 
+     //  String boxy = cbo_quat.getSelectedItem().toString();
+       
+       */
+        
+        
+    }//GEN-LAST:event_cbo_selectItemStateChanged
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void cbo_selectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbo_selectMouseClicked
+        String box = cbo_select.getSelectedItem().toString();
+        String boxy = cbo_quat.getSelectedItem().toString();
+        
+        String[] Lanche = box.split(";");
+       // System.out.print(Lanche[0]); //nome
+        //System.out.print(Lanche[1]); //tamanho
+       // System.out.print(Lanche[2]); //valor
+       
+       jTextField7.setText(Lanche[2]);
+       String valor =  jTextField7.getText();
+       String mega =  valor;
+       int Mega = Integer.parseInt(mega);
+       
+       
+        
+        jTextField1.setText("O valor R$"+Lanche[2]+" a quantidade "+boxy);
+        int BOX = Integer.parseInt(Lanche[2]);
+        int BOXY = Integer.parseInt(boxy);
+        int res = BOXY * BOX;
+        jTextField2.setText(""+res);
+        
+        jTextField3.setText(Lanche[0]+Lanche[1]+Lanche[2]);
+        String escolha = jTextField3.getText();
+        
+        jTextField4.setText(boxy);
+        String quantidade = jTextField4.getText();
+        
+        String Valor = jTextField2.getText();
+        
+        
+        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        dtm.addRow(new Object[]{escolha,Valor,quantidade,"",""});
+        
+       
+        
+       
+        
+      String texto[] = new String[10];
+       // texto[0] =  jTextField3.getText();// escolha
+        texto[1] = jTextField2.getText(); // valor
+        texto[2] = jTextField4.getText(); // quantidade 
+       
+        
+       // System.out.print(texto[0] +" "+ texto[1] + " "+ texto[2] +" "); 
+       
+        System.out.print(escolha);
+        
+        RegistroDaTabela registroDaTabela = new RegistroDaTabela();
+        
+        registroDaTabela.setQuantia(jTextField2.getText()); // valor
+       // registroDaTabela.setValorTotal(jTextField3.getText()); // lanche 
+        registroDaTabela.setQuantida(jTextField4.getText()); // quantidade 
+        JOptionPane.showMessageDialog(null, registroDaTabela.sauvado());
+        
+        //String aSeparar = lerArquivo2()
+        
+        
+  /*         File arquivo = new File("C:\\Arquivos do programa/ControleDaTabela.txt");  
+
+      try {
+          FileReader fr = new FileReader(arquivo);   
+           BufferedReader br = new BufferedReader(fr);
+           
+
+                String linha = br.readLine();
+                
+                
+               // cbo_select.addItem("Selecione o serviço");
+                
+                while(linha != null){
+                    //cbo_select.addItem(linha);
+                   int obiter = Integer.parseInt(linha);
+                   int array[];
+                   new  array[0] = ;
+                   
+                    linha = br.readLine();
+                } 
+                              
+
+            
+              
+   } catch (Exception ex) {
+        Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+    } */
+ 
+	/*	while((texto2 = br2.readLine()) != null){
+                    
+		
+			valores.add(texto2);
+                        valores.split();
+			System.out.print(valores);
+                                
+                               
+                        
+                     
+                            
+                       
+			
+		}		*/		
+		 try {
+             String filePath = ("C:\\Arquivos do programa/ControleDaTabela.txt");
+        File file = new File(filePath);
+            
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+          //  model.setColumnIdentifiers(columnsName);
+            
+            
+
+            
+            Object[] tableLines = br.lines().toArray();
+            //model.addRow(tableLines);
+            
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split(";");
+                model.addRow(dataRow);
+                jTextField8.setText(dataRow[0]);
+                jTextField9.setText(dataRow[1]);
+                jTextField10.setText(dataRow[2]);
+                jTextField11.setText(dataRow[3]);
+                jTextField14.setText(dataRow[4]);
+                jTextField15.setText(dataRow[5]);
+                jTextField16.setText(dataRow[6]);
+                jTextField17.setText(dataRow[7]);
+                jTextField18.setText(dataRow[8]);
+                jTextField19.setText(dataRow[9]);
+                jTextField20.setText(dataRow[10]);
+                jTextField21.setText(dataRow[11]);
+                jTextField22.setText(dataRow[12]);
+                jTextField23.setText(dataRow[13]);
+                jTextField24.setText(dataRow[14]);
+                jTextField25.setText(dataRow[15]);
+                jTextField26.setText(dataRow[16]);
+                jTextField27.setText(dataRow[17]);
+                jTextField28.setText(dataRow[18]);
+                jTextField29.setText(dataRow[19]);
+
+
+             /*  String um =  jTextField8.getText();
+               String dois = jTextField9.getText();
+               String tres = jTextField10.getText();
+               String quatro = jTextField11.getText();
+               
+               int UM = Integer.parseInt(um);
+               int DOIS = Integer.parseInt(dois);
+               int TRES =  Integer.parseInt(tres);
+               int QUATRO =  Integer.parseInt(quatro);
+               int RESUTADO = UM * DOIS;
+               System.out.print(RESUTADO);
+               jTextField12.setText(""+RESUTADO); */
+             
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+	jTextField13not.setText(""+jTable1.getRowCount());
+    
+         
+      
+        
+        
+    }//GEN-LAST:event_cbo_selectMouseClicked
+
+    private void cbo_quatItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbo_quatItemStateChanged
+        
+    }//GEN-LAST:event_cbo_quatItemStateChanged
+
+    private void txT_NomeUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_NomeUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_NomeUSUARIOActionPerformed
+
+    private void jLabel1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1FocusLost
+
+    private void txT_EnderecoUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_EnderecoUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_EnderecoUSUARIOActionPerformed
+
+    private void txT_NumeroUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_NumeroUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_NumeroUSUARIOActionPerformed
+
+    private void txT_BairroUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_BairroUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_BairroUSUARIOActionPerformed
+
+    private void txT_CodigoUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_CodigoUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_CodigoUSUARIOActionPerformed
+
+    private void txT_dataUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_dataUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_dataUSUARIOActionPerformed
+
+    private void txT_AniversarioUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_AniversarioUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_AniversarioUSUARIOActionPerformed
+
+    private void txT_EmailUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_EmailUSUARIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_EmailUSUARIOActionPerformed
+
+    private void txT_whatsUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_whatsUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_whatsUSUARIO1ActionPerformed
+
+    private void txT_CelularUSUARIO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_CelularUSUARIO2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_CelularUSUARIO2ActionPerformed
+
+    private void txT_ObiservacoesUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_ObiservacoesUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_ObiservacoesUSUARIO1ActionPerformed
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        
+            JFileChooser arquivo = new JFileChooser();
+            arquivo.setDialogTitle("Selecione uma foto");
+            arquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        
+        int opc = arquivo.showOpenDialog(this);
+        if(opc == JFileChooser.APPROVE_OPTION) {
+            File file = new File("Caminho");
+            file=arquivo.getSelectedFile(); //RECEBE O CAMINHO
+            String filename = file.getAbsolutePath();
+            jTextFieldPath.setText(filename);
+            
+            
+            ImageIcon imagem = new ImageIcon(arquivo.getSelectedFile().getPath());
+            jLabel17.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(jLabel17.getWidth(), jLabel17.getHeight(), Image.SCALE_DEFAULT)));
+        
+        }
+        
+    }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void txT_NumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_NumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_NumeroActionPerformed
+
+    private void jButtonlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonlinkActionPerformed
+  
+        
+        try {
+           //String numero = "5583998692594";
+            String texto = "é+a+hora+da+putaria";
+            
+            String numero = txT_whatsUSUARIO1.getText();
+            
+            
+            URI link = new URI("https://api.whatsapp.com/send?phone=5583998692594&text=é+a+hora+da+putaria");
+          //  URI link = new URI("https://api.whatsapp.com/send?phone="+numero+"&text="+texto);
+            Desktop.getDesktop().browse(link);
+            
+            
+        } catch (Exception erro) {
+            System.out.println(erro);
+        }
+        
+        
+    }//GEN-LAST:event_jButtonlinkActionPerformed
+
+    private void txT_EnderecoUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_EnderecoUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_EnderecoUSUARIO1ActionPerformed
+
+    private void txT_NumeroUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_NumeroUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_NumeroUSUARIO1ActionPerformed
+
+    private void txT_BairroUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_BairroUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_BairroUSUARIO1ActionPerformed
+
+    private void txT_CodigoUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_CodigoUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_CodigoUSUARIO1ActionPerformed
+
+    private void txT_dataUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_dataUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_dataUSUARIO1ActionPerformed
+
+    private void txT_AniversarioUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_AniversarioUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_AniversarioUSUARIO1ActionPerformed
+
+    private void txT_EmailUSUARIO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_EmailUSUARIO1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_EmailUSUARIO1ActionPerformed
+
+    private void txT_whatsUSUARIO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_whatsUSUARIO2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_whatsUSUARIO2ActionPerformed
+
+    private void txT_CelularUSUARIO3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_CelularUSUARIO3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_CelularUSUARIO3ActionPerformed
+
+    private void txT_ObiservacoesUSUARIO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_ObiservacoesUSUARIO2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_ObiservacoesUSUARIO2ActionPerformed
+
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel28MouseClicked
+
+    private void txT_Numero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_Numero1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_Numero1ActionPerformed
+
+    private void jButtonlink1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonlink1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonlink1ActionPerformed
+
+    private void jFrame1formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jFrame1formWindowOpened
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFrame1formWindowOpened
+
+    private void txT_EnderecoUSUARIO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txT_EnderecoUSUARIO2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txT_EnderecoUSUARIO2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+    //    registroDeCompra.setPedido(pedidos);
+       
+        registroDeCompra.setResutado(jTextField30.getText());
+       
+    /*    registroDeCompra.setNome(txT_NomeUSUARIO.getText());
+        registroDeCompra.setEndereço(txT_EnderecoUSUARIO.getText());
+        registroDeCompra.setNumero(txT_NumeroUSUARIO.getText());
+        registroDeCompra.setBairro(txT_BairroUSUARIO.getText());
+        registroDeCompra.setDataNacimento(txT_AniversarioUSUARIO1.getText());
+        registroDeCompra.setEmail(txT_EmailUSUARIO.getText());
+        registroDeCompra.setWhatsApp(txT_whatsUSUARIO1.getText());
+        registroDeCompra.setCelular(txT_CelularUSUARIO2.getText());
+        registroDeCompra.setObiservaçoes(txT_ObiservacoesUSUARIO1.getText());
+     //   registroDeCompra.setValores(jTextField30.getText()); */
+       // registroDeCompra.setData(dataString);
+      //  registroDeCompra.setHora(horarioString);
+
+     
+        
+        
+        try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+            // jTextField1.setText("");
+            // texREs.setText("");
+            
+            
+            /*   t.start();
+            prgs.setValue(prgs.getValue()+10);
+            
+            t.stop(); */
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        try{
+        String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
+        File file = new File(filePath);
+            
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel)jTable3.getModel();
+            model.setColumnIdentifiers(columnsName);
+            
+              
+            Object[] tableLines = br.lines().toArray();
+            model.addRow(tableLines);
+            
+            for(int i = 0; i < tableLines.length; i++){
+            
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split(";");
+                model.addRow(dataRow);
+                jTextField70.setText(dataRow[0]);
+                jTextField31.setText(dataRow[1]);
+                jTextField32.setText(dataRow[2]);
+                jTextField33.setText(dataRow[3]);
+                jTextField34.setText(dataRow[4]);
+                jTextField35.setText(dataRow[5]);
+                jTextField36.setText(dataRow[6]);
+                jTextField37.setText(dataRow[7]);
+                jTextField38.setText(dataRow[8]);
+                jTextField39.setText(dataRow[9]);
+                jTextField40.setText(dataRow[10]);
+                jTextField41.setText(dataRow[11]);
+                jTextField42.setText(dataRow[12]);
+                jTextField43.setText(dataRow[13]);
+                jTextField44.setText(dataRow[14]); 
+                jTextField45.setText(dataRow[15]);
+                jTextField46.setText(dataRow[16]);
+                jTextField47.setText(dataRow[17]);
+                jTextField48.setText(dataRow[18]);
+                jTextField49.setText(dataRow[19]);
+                
+                
+               
+                
+                int bloco1 = Integer.parseInt(jTextField70.getText());
+                
+                if(bloco1 != 0){
+                String Bloclo1 = ""+bloco1;
+                System.out.print(Bloclo1);
+                jTextField50.setText(Bloclo1);
+              //  RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+                
+                
+
+                  registroDeCompra.setResutado(jTextField50.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                int bloco2 = Integer.parseInt(jTextField31.getText());
+                
+                if(bloco2 != 0){
+                    String Bloclo2 = ""+bloco2;
+                System.out.print(Bloclo2);
+                jTextField51.setText(Bloclo2);
+               //   RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField51.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+         
+                 int bloco3 = Integer.parseInt(jTextField32.getText());
+                
+                if(bloco3 != 0){
+                    String Bloclo3 = ""+bloco3;
+                System.out.print(Bloclo3);
+                jTextField52.setText(Bloclo3);
+         //         RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField52.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco4 = Integer.parseInt(jTextField33.getText());
+                
+                if(bloco4 != 0){
+                    String Bloclo4 = ""+bloco4;
+                System.out.print(Bloclo4);
+                jTextField53.setText(Bloclo4);
+          //        RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField53.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco5 = Integer.parseInt(jTextField34.getText());
+                
+                if(bloco5 != 0){
+                    String Bloclo5 = ""+bloco5;
+                System.out.print(Bloclo5);
+               jTextField54.setText(Bloclo5);
+            //      RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField54.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco6 = Integer.parseInt(jTextField35.getText());
+                
+                if(bloco6 != 0){
+                    String Bloclo6 = ""+bloco6;
+                System.out.print(Bloclo6);
+               jTextField55.setText(Bloclo6);
+         //         RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField55.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco7 = Integer.parseInt(jTextField36.getText());
+                
+                if(bloco7 != 0){
+                    String Bloclo7 = ""+bloco7;
+                System.out.print(Bloclo7);
+               jTextField56.setText(Bloclo7);
+          //        RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField56.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+               
+                int bloco8 = Integer.parseInt(jTextField37.getText());
+                
+                if(bloco8 != 0){
+                    String Bloclo8 = ""+bloco8;
+                System.out.print(Bloclo8);
+               jTextField57.setText(Bloclo8);
+            //      RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField57.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco9 = Integer.parseInt(jTextField38.getText());
+                
+                if(bloco9 != 0){
+                    String Bloclo9 = ""+bloco9;
+                System.out.print(Bloclo9);
+               jTextField58.setText(Bloclo9);
+       //           RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField58.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+               
+                int bloco10 = Integer.parseInt(jTextField39.getText());
+                
+                if(bloco10 != 0){
+                    String Bloclo10 = ""+bloco10;
+                System.out.print(Bloclo10);
+               jTextField59.setText(Bloclo10);
+       //           RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField59.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco11 = Integer.parseInt(jTextField40.getText());
+                
+                if(bloco11 != 0){
+                    String Bloclo11 = ""+bloco11;
+                System.out.print(Bloclo11);
+               jTextField60.setText(Bloclo11);
+        //          RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField60.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco12 = Integer.parseInt(jTextField41.getText());
+                
+                if(bloco12 != 0){
+                    String Bloclo12 = ""+bloco12;
+                System.out.print(Bloclo12);
+               jTextField61.setText(Bloclo12);
+    //              RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField61.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco13 = Integer.parseInt(jTextField42.getText());
+                
+                if(bloco13 != 0){
+                    String Bloclo13 = ""+bloco13;
+                System.out.print(Bloclo13);
+               jTextField62.setText(Bloclo13);
+       //           RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField62.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco14 = Integer.parseInt(jTextField43.getText());
+                
+                if(bloco14 != 0){
+                    String Bloclo14 = ""+bloco14;
+                System.out.print(Bloclo14);
+               jTextField63.setText(Bloclo14);
+     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField63.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco15 = Integer.parseInt(jTextField44.getText());
+                
+                if(bloco15 != 0){
+                    String Bloclo15 = ""+bloco15;
+                System.out.print(Bloclo15);
+               jTextField64.setText(Bloclo15);
+     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField64.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                 int bloco16 = Integer.parseInt(jTextField45.getText());
+                
+                if(bloco16 != 0){
+                    String Bloclo16 = ""+bloco16;
+                System.out.print(Bloclo16);
+               jTextField65.setText(Bloclo16);
+     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField65.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco17 = Integer.parseInt(jTextField46.getText());
+                
+                if(bloco17 != 0){
+                    String Bloclo17 = ""+bloco17;
+                System.out.print(Bloclo17);
+               jTextField66.setText(Bloclo17);
+     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField66.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                int bloco19 = Integer.parseInt(jTextField48.getText());
+                
+                if(bloco19 != 0){
+                    String Bloclo19 = ""+bloco19;
+                System.out.print(Bloclo19);
+               jTextField68.setText(Bloclo19);
+   //               RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField68.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                
+                 int bloco20 = Integer.parseInt(jTextField49.getText());
+                
+                if(bloco20 != 0){
+                    String Bloclo20 = ""+bloco20;
+                System.out.print(Bloclo20);
+               jTextField69.setText(Bloclo20);
+   //               RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField69.getText());
+                     try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                }else{
+                }
+                //METODO DE APAGAR
+                
+                
+                
+                
+                
+                
+ 
+            }
+                }catch (Exception ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+      
+        File file = new File("C:\\Arquivos do programa/ValorTotal.txt");
+       
+        try {
+        FileReader fr = new FileReader(file); 
+        BufferedReader br = new BufferedReader(fr);
+       
+        
+        String linha = br.readLine();
+        ArrayList<String> salvar = new ArrayList();
+        while(linha != null){
+            
+            String um = jTextField70.getText();
+            
+            
+            
+            String dois = jTextField31.getText();
+            String trez = jTextField32.getText();
+            String quatro = jTextField33.getText();
+            String cinco =   jTextField34.getText();
+            String seis = jTextField35.getText();
+            String sete = jTextField36.getText();
+            String oito = jTextField37.getText();
+            String nove = jTextField38.getText();
+            String dez =  jTextField39.getText();
+            String onze = jTextField40.getText();
+            String doze = jTextField41.getText();
+            String treze = jTextField42.getText();
+            String quatoze = jTextField43.getText();
+            String quise =  jTextField44.getText(); 
+            String deseseis = jTextField45.getText();
+            String desesete = jTextField46.getText();
+            String desoito = jTextField47.getText();
+            String desenove = jTextField48.getText();
+            String vinte = jTextField49.getText();
+                    
+           
+            
+            
+                  
+            if(linha.equals(um+";"+dois+";"+trez+";"+quatro+";"+cinco+";"+seis+";"+sete+";"+oito+";"+nove+";"+dez+";"+onze+";"+doze+";"+treze+";"+quatoze+";"+quise+";"+deseseis+";"+desesete+";"+desoito+";"+desenove+";"+vinte+";") == false){
+                salvar.add(linha);
+            //    JOptionPane.showMessageDialog(null,um+";"+dois+";"+trez+";"+quatro+";"+cinco+";"+seis+";"+sete+";"+oito+";"+nove+";"+dez+";"+onze+";"+doze+";"+treze+";"+quatoze+";"+quise+";"+deseseis+";"+desesete+";"+desoito+";"+desenove+";"+vinte+";");
+            }
+            linha = br.readLine();
+        }
+
+        br.close();
+        fr.close();
+        FileWriter fw2 = new FileWriter(file, true);
+        fw2.close();
+        
+        FileWriter fw = new FileWriter(file);
+        BufferedWriter bw = new BufferedWriter(fw);
+        
+            for (int i = 0; i < salvar.size(); i++) {
+            bw.write( salvar.get(i) );
+            bw.newLine();
+            
+            }
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+        }
+
+        
+        
+      //CONTAGEM PARA VER QUNTOS NUMEROS FATAOM PARA 20 
+      try{
+             String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
+        File filey = new File(filePath);
+            
+            BufferedReader br = new BufferedReader(new FileReader(filey));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+        //    DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+          //  model.setColumnIdentifiers(columnsName);
+            
+              
+            Object[] tableLines = br.lines().toArray();
+            //model.addRow(tableLines);
+            
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split(";");
+            //    integer[] valoresint = new integer(dataRow.length);
+                
+                
+              //  model.addRow(dataRow);
+                
+                
+              
+                
+                
+                
+               
+                
+ 
+                
+                            int contador = 0;
+               for (int j = 0; j < dataRow.length; j ++){
+                if (dataRow[j] != null)
+                contador ++;
+                
+                jTextField71.setText(""+contador);
+                System.out.print(""+contador);
+
+               }int bloco = Integer.parseInt(jTextField71.getText());
+               
+               int contador2 = 0;
+                for (int j = 0; j < bloco; j++) {
+                    
+               contador2 ++;
+               if (contador2 <20){
+                   
+                   jTextField72.setText("0;");
+     //          RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+                  registroDeCompra.setResutado(jTextField72.getText());
+                   
+
+               }
+                    
+                }
+   
+            
+             
+            }
+            
+        }catch (Exception ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+      
+      
+        
+        
+        
+      
+      
+      
+      
+      
+      
+      
+        String dataAtualFormatada = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+        .format(System.currentTimeMillis());
+
+        //Seta valores da data
+        String dataString = dataAtualFormatada.substring(0,10);
+
+        //Seta valores do horário
+        String horarioString = dataAtualFormatada.substring(11,19);
+
+    /*    RegistroDeCompra registroDeCompra = new RegistroDeCompra();
+
+    //    registroDeCompra.setPedido(pedidos);
+       
+        registroDeCompra.setResutado(jTextField30.getText());
+       
+        registroDeCompra.setNome(txT_NomeUSUARIO.getText());
+        registroDeCompra.setEndereço(txT_EnderecoUSUARIO.getText());
+        registroDeCompra.setNumero(txT_NumeroUSUARIO.getText());
+        registroDeCompra.setBairro(txT_BairroUSUARIO.getText());
+        registroDeCompra.setDataNacimento(txT_AniversarioUSUARIO1.getText());
+        registroDeCompra.setEmail(txT_EmailUSUARIO.getText());
+        registroDeCompra.setWhatsApp(txT_whatsUSUARIO1.getText());
+        registroDeCompra.setCelular(txT_CelularUSUARIO2.getText());
+        registroDeCompra.setObiservaçoes(txT_ObiservacoesUSUARIO1.getText());
+     //   registroDeCompra.setValores(jTextField30.getText());
+        registroDeCompra.setData(dataString);
+        registroDeCompra.setHora(horarioString);
+
+     
+        
+       / 
+        try {
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+            // jTextField1.setText("");
+            // texREs.setText("");
+            
+            
+            /*   t.start();
+            prgs.setValue(prgs.getValue()+10);
+            
+            t.stop(); 
+        
+        } catch (IOException ex) {
+            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } */
+        
+        
+       
+        
+            
+         
+        
+       
+ 
+ 
+        
+        
+        
+     
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton777ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton777ActionPerformed
+         ImageIcon icon = new ImageIcon("C:\\Arquivos do programa/cliente.png");
+         jLabel33.setIcon( icon );
+        
+     
+    /* alumno.setNome(txT_NomeUSUARIO.getText()); 
+     //alumno.setEndereço(txT_EnderecoUSUARIO.getText());
+     alumno.setBairro(txT_BairroUSUARIO.getText());
+     alumno.setNumero(txT_NumeroUSUARIO.getText());
+     alumno.setAniversario(txT_AniversarioUSUARIO.getText());
+     alumno.setEmail(txT_EmailUSUARIO.getText());
+     alumno.setWhats(txT_whatsUSUARIO1.getText());
+     alumno.setCelular(txT_CelularUSUARIO2.getText());
+     alumno.setObiservaçoes(txT_ObiservacoesUSUARIO1.getText()); */
+     
+    String nome = txT_NomeUSUARIO.getText();
+    String endereco = txT_EnderecoUSUARIO.getText();
+    String bairro = txT_BairroUSUARIO.getText();
+     String numero = txT_NumeroUSUARIO.getText();
+    String aniversario =txT_AniversarioUSUARIO.getText();
+     String whats = txT_whatsUSUARIO1.getText();
+     String celular = txT_CelularUSUARIO2.getText();
+     String Obiservaçoes = txT_ObiservacoesUSUARIO1.getText();
+     String email = txT_EmailUSUARIO.getText();
+        
+    alumno.setNome(nome);
+    alumno.setEndereco(endereco);
+    alumno.setBairro(bairro);
+    alumno.setNumero(numero);
+    alumno.setAniversario(aniversario);
+    alumno.setAniversario(aniversario);
+    alumno.setWhats(whats);
+    alumno.setCelular(celular);
+    alumno.setObiservaçoes(Obiservaçoes);
+    alumno.setEmail(email);
+
+     
+     metodos.guardar(alumno);
+     metodos.guardarArchivo(alumno);
+        
+        
+        
+    }//GEN-LAST:event_jButton777ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if(jTable1.getSelectedRow() != -1){
+        
+        System.out.print("Linha selecionada: "+jTable1.getSelectedColumn());
+            
+        DefaultTableModel dmz = (DefaultTableModel)jTable1.getModel();
+        dmz.removeRow(jTable1.getSelectedRow());
+ 
+        
+         File file = new File("C:\\Arquivos do programa/ControleDaTabela.txt");
+       
+        try {
+        FileReader fr = new FileReader(file); 
+        BufferedReader br = new BufferedReader(fr);
+       
+        
+        String linha = br.readLine();
+        ArrayList<String> salvar = new ArrayList();
+        while(linha != null){
+            
+            String lanche = jTextField6.getText();
+
+            
+            
+            if(linha.equals(lanche) == false){
+                salvar.add(linha);
+            
+            }
+            linha = br.readLine();
+        }
+
+        br.close();
+        fr.close();
+        FileWriter fw2 = new FileWriter(file, true);
+        fw2.close();
+        
+        FileWriter fw = new FileWriter(file);
+        BufferedWriter bw = new BufferedWriter(fw);
+        
+            for (int i = 0; i < salvar.size(); i++) {
+            bw.write( salvar.get(i) );
+            bw.newLine();
+            
+            }
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+        }
+        
+        
+         }else{
+            JOptionPane.showMessageDialog(null, "Favor selecionar uma linha");
+        }  
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+ /////////////clicado
+       TableModel model1 = jTable1.getModel(); 
+     // TableModel model3 = jTextField8.getModel();
+      int indexs[] = jTable1.getSelectedRows();
+      
+      jTextField6.setText(jTable1.getModel().getValueAt(jTable1.getSelectedRow(),0).toString()); //controle lanche
+      jTextField5.setText(jTable1.getModel().getValueAt(jTable1.getSelectedRow(),1).toString()); //controle valor
+      jTestfildbig.setText(jTable1.getModel().getValueAt(jTable1.getSelectedRow(),2).toString()); //controle quantidade
+        
+        
+       
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
+         
+                
+        String um =  jTextField8.getText();
+               String dois = jTextField9.getText();
+               String tres = jTextField10.getText();
+               String quatro = jTextField11.getText();
+               String sinco = jTextField14.getText();
+                String seis = jTextField15.getText();
+               String sete =  jTextField16.getText();
+               String oito = jTextField17.getText();
+               String nove = jTextField18.getText();
+               String dez=  jTextField19.getText();
+           /*  String onze =  jTextField20.getText();
+               String doze =  jTextField21.getText();
+               String treze = jTextField22.getText();
+               String quatoze =  jTextField23.getText();
+               String quinze = jTextField24.getText();
+               String deseseis =  jTextField25.getText();
+               String desoito =  jTextField26.getText();
+               String desenove =  jTextField27.getText();
+               String vinte = jTextField28.getText();
+               String vinteUm =  jTextField29.getText(); */
+               
+               int UM = Integer.parseInt(um);
+               int DOIS = Integer.parseInt(dois);
+               int TRES =  Integer.parseInt(tres);
+               int QUATRO =  Integer.parseInt(quatro);
+               int CINCO= Integer.parseInt(sinco);
+               int SEIS = Integer.parseInt(seis);
+               int SETE = Integer.parseInt(sete);
+               int OITO = Integer.parseInt(oito);
+               int NOVE = Integer.parseInt(nove);
+               int DEZ = Integer.parseInt(dez);
+         /*      int ONZE = Integer.parseInt(onze);
+               int DOZE = Integer.parseInt(doze);
+               int TREZE = Integer.parseInt(treze);
+               int QUATOZE = Integer.parseInt(quatoze);
+               int QUINZE = Integer.parseInt(quinze);
+               int DESESEIS = Integer.parseInt(deseseis);
+               int DESOITO =Integer.parseInt(desoito);
+               int DESENOVE = Integer.parseInt(desenove);
+               int VINTE = Integer.parseInt(vinte);
+               int VInTEUM = Integer.parseInt(vinteUm); */
+                
+               
+               
+               int RESUTADO = UM * DOIS + TRES * QUATRO; //3
+               int res1 = RESUTADO + CINCO * SEIS; //4
+               int res2 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO; //5
+               int res3 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ; //6
+              // int res4 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE;
+              // int res5 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE;
+              // int res6 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS;
+              // int res7 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE;
+              // int res8 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE +VINTE * VInTEUM;
+               
+            
+               // jTextField13.setText("ta vasio");
+           /*    String quantidade = jTextField13not.getText();
+               int Quantidade = Integer.parseInt(quantidade); 
+               int valor = 3;
+               if (Quantidade != 3){
+               jTextField30.setText(""+RESUTADO);
+               }else{
+               jTextField30.setText(""+res1);
+               }
+               
+                         /*    int AA = Integer.parseInt(A); 
+               if(AA != 3){
+                   // È DIFERENTE DE 3
+               jTextField30.setText(""+res1);
+               }else{
+                   // NAO È DIFRENTE
+               jTextField30.setText(""+RESUTADO);
+               }if(AA !=5&&AA == 7){
+               jTextField30.setText(""+res3);    
+               }else{
+               jTextField30.setText(""+res2);
+               } */
+               
+               
+               
+               
+               //jTextField12.setText(""+RESUTADO);
+             /*  jTextField13.setText(""+res1);
+               jTextField12.setText(""+res2);
+               jTextField13.setText(""+res2);
+               jTextField12.setText(""+res3);
+               jTextField13.setText(""+res3);
+               jTextField12.setText(""+res4);
+               jTextField13.setText(""+res4);
+               jTextField12.setText(""+res5);
+               jTextField13.setText(""+res5);
+               jTextField12.setText(""+res6);
+               jTextField13.setText(""+res6);
+               jTextField12.setText(""+res7);
+               jTextField13.setText(""+res8); */                
+        
+        
+        
+    }//GEN-LAST:event_jLabel30MouseClicked
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+       
+        
+        String um =  jTextField8.getText();
+               String dois = jTextField9.getText();
+               String tres = jTextField10.getText();
+               String quatro = jTextField11.getText();
+               String sinco = jTextField14.getText();
+                String seis = jTextField15.getText();
+               String sete =  jTextField16.getText();
+               String oito = jTextField17.getText();
+           //    String nove = jTextField18.getText();
+           //    String dez=  jTextField19.getText();
+             //  String onze =  jTextField20.getText();
+            //   String doze =  jTextField21.getText();
+              /* String treze = jTextField22.getText();
+               String quatoze =  jTextField23.getText();
+               String quinze = jTextField24.getText();
+               String deseseis =  jTextField25.getText();
+               String desoito =  jTextField26.getText();
+               String desenove =  jTextField27.getText();
+               String vinte = jTextField28.getText();
+               String vinteUm =  jTextField29.getText(); */
+               
+               int UM = Integer.parseInt(um);
+               int DOIS = Integer.parseInt(dois);
+               int TRES =  Integer.parseInt(tres);
+               int QUATRO =  Integer.parseInt(quatro);
+               int CINCO= Integer.parseInt(sinco);
+               int SEIS = Integer.parseInt(seis);
+               int CETE = Integer.parseInt(oito);
+               int SETE = Integer.parseInt(sete);
+           //    int OITO = Integer.parseInt(oito);
+          ///     int NOVE = Integer.parseInt(nove);
+           //    int DEZ = Integer.parseInt(dez);
+           //    int ONZE = Integer.parseInt(onze);
+          //     int DOZE = Integer.parseInt(doze);
+            /*   int TREZE = Integer.parseInt(treze);
+               int QUATOZE = Integer.parseInt(quatoze);
+               int QUINZE = Integer.parseInt(quinze);
+               int DESESEIS = Integer.parseInt(deseseis);
+               int DESOITO =Integer.parseInt(desoito);
+               int DESENOVE = Integer.parseInt(desenove);
+               int VINTE = Integer.parseInt(vinte);
+               int VInTEUM = Integer.parseInt(vinteUm); */
+            
+           
+              //3 CONPONETES
+             if (UM == 12){
+                 jTextField80.setText(""+4); 
+             }
+              if(UM==15){
+                     jTextField80.setText(""+4);
+              }
+              if(UM==21){
+                     jTextField80.setText(""+4);
+              }
+              if(UM==32){
+                    jTextField80.setText(""+4);
+              }
+              if(UM==39){
+                    jTextField80.setText(""+4);
+              }
+              
+              //5 CONPONEMTES
+             if(UM == 14){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 17){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 23){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 34){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 43){
+             jTextField80.setText(""+6);
+             }
+             
+             //7 COMPONENTES
+             if(UM == 16){
+             jTextField80.setText(""+8);
+             }
+              if(UM == 19){
+             jTextField80.setText(""+8);
+             }
+               if(UM == 25){
+             jTextField80.setText(""+8);
+             }
+                if(UM == 36){
+             jTextField80.setText(""+8);
+             }
+                if(UM == 45){
+             jTextField80.setText(""+8);
+             }
+             int AA = Integer.parseInt( jTextField80.getText()); 
+             //int AA = 4;
+                
+                int[] TrezComplementos = new int[AA];
+                
+               
+               int[] a = new int[4];
+             
+             if(UM == 1){
+             a[0] = UM;
+             TrezComplementos[0] = 1;
+             UM = 0;
+             
+             }else{
+             
+             }
+             
+             if(TRES == 1 ){
+             a[1] = TRES;
+             TrezComplementos[1] = 1;
+             TRES = 0;
+             }else{}
+             
+             if(CINCO == 1){
+             a[2] = CINCO;
+             TrezComplementos[2] = 1;
+             CINCO = 0;
+             }else{}
+             
+             if(SETE == 1){
+             a[3] = SETE;
+             TrezComplementos[3] = 1;
+             SETE = 0;
+             }else{}
+          
+             
+             
+             int[] b = {0,1,2,3,4};
+             
+              int   tamanho  = TrezComplementos.length;
+               for (int j = 0; j < TrezComplementos.length; j ++){
+                System.out.print( TrezComplementos[j]);
+               }
+               System.out.print("/"+tamanho+"/");
+              
+               jTextField75.setText(""+TrezComplementos[0]);
+               jTextField76.setText(""+TrezComplementos[1]);
+               jTextField77.setText(""+TrezComplementos[2]);
+               jTextField78.setText(""+TrezComplementos[3]);
+             
+             
+               int[] Complementos = new int[4];
+               
+               int prima = Integer.parseInt( jTextField75.getText());
+               int safada = Integer.parseInt(jTextField76.getText());
+               int gostosa =  Integer.parseInt(jTextField77.getText());
+               int pegava =  Integer.parseInt(jTextField78.getText());
+               
+               if(prima == 1){
+                   Complementos[0] = 1;
+               }
+               if(safada == 1){
+                   Complementos[1] = 1;
+               }
+                if(gostosa == 1){
+                   Complementos[1] = 1;
+               }
+                if(pegava == 1){
+                   Complementos[1] = 1;
+               }
+              
+                 //int   tamanho  = Complementos.length;
+                 int t  = Complementos.length;
+               for (int j = 0; j < TrezComplementos.length; j ++){
+                System.out.print( TrezComplementos[j]);
+               }
+               System.out.print("/"+t+"/");
+               
+               int  resutado = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3] ;
+               if(resutado <4 ){
+                JOptionPane.showMessageDialog(null, "acai de 3 com 3 compontes");
+               }
+               
+               if(t ==3){
+               JOptionPane.showMessageDialog(null, "acai de 3 com 4  compontes");
+               } 
+               
+               if(prima != 1){
+               }else{
+               JOptionPane.showMessageDialog(null, "vai comesar a putaria ha ha ha" );
+               }
+             
+                JOptionPane.showMessageDialog(null, a[0]);
+                JOptionPane.showMessageDialog(null, a[1]);
+                JOptionPane.showMessageDialog(null, a[2]);
+                JOptionPane.showMessageDialog(null, a[3]);
+                
+                
+               
+
+             
+               
+               int RESUTADO = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * CETE;
+               //int RESUTADO2 = RESUTADO + NOVE * DEZ +;
+             //  int res1 =  RESUTADO + CINCO * SEIS;
+            //   int res2 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO;
+              // int res3 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ;
+              // int res4 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE;
+              // int res5 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE;
+              // int res6 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS;
+              // int res7 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE;
+              // int res8 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE +VINTE * VInTEUM;
+               
+              
+              
+               String quantidade = jTextField13not.getText();
+               int Quantidade = Integer.parseInt(quantidade); 
+               int valor = 3;
+               // Nao ta no 3
+               if (Quantidade < 10 && Quantidade >0){
+               jTextField30.setText(""+RESUTADO);
+               
+             //  if(Quantidade  <10 && Quantidade >3 ){
+            //       jTextField30.setText(""+res1);
+             //  }
+               
+            //   else{
+            //   }
+               }else{
+          
+               }
+               
+               // jTextField13.setText("ta vasio");
+             
+              // jTextField30.setText(""+RESUTADO);
+               //jTextField12.setText(""+RESUTADO);
+             /*  jTextField13.setText(""+res1);
+               jTextField12.setText(""+res2);
+               jTextField13.setText(""+res2);
+               jTextField12.setText(""+res3);
+               jTextField13.setText(""+res3);
+               jTextField12.setText(""+res4);
+               jTextField13.setText(""+res4);
+               jTextField12.setText(""+res5);
+               jTextField13.setText(""+res5);
+               jTextField12.setText(""+res6);
+               jTextField13.setText(""+res6);
+               jTextField12.setText(""+res7);
+               jTextField13.setText(""+res8); */
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField17ActionPerformed
+
+    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField18ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+ 
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        String resutado1 = jTextField30.getText();      
+        int Resutado1 = Integer.parseInt(resutado1);
+        
+        String um =  jTextField8.getText();
+               String dois = jTextField9.getText();
+              String tres = jTextField10.getText();
+               String quatro = jTextField11.getText();
+               String sinco = jTextField14.getText();
+                String seis = jTextField15.getText(); 
+               String sete =  jTextField16.getText();
+               String oito = jTextField17.getText();
+               String nove = jTextField18.getText();
+               String dez=  jTextField19.getText();
+               String onze =  jTextField20.getText();
+        //       String doze =  jTextField21.getText();
+              // String treze = jTextField22.getText();
+            //   String quatoze =  jTextField23.getText();
+          //     String quinze = jTextField24.getText();
+           //    String deseseis =  jTextField25.getText();
+            /*   String desoito =  jTextField26.getText();
+               String desenove =  jTextField27.getText();
+               String vinte = jTextField28.getText();
+               String vinteUm =  jTextField29.getText(); */
+               
+               int UM = Integer.parseInt(um);
+               int DOIS = Integer.parseInt(dois);
+               int TRES =  Integer.parseInt(tres);
+               int QUATRO =  Integer.parseInt(quatro);
+               int CINCO= Integer.parseInt(sinco);
+               int SEIS = Integer.parseInt(seis);
+               int CETE = Integer.parseInt(oito);
+               int SETE = Integer.parseInt(sete);
+              int OITO = Integer.parseInt(oito);
+               int NOVE = Integer.parseInt(nove);
+               int DEZ = Integer.parseInt(dez);
+               int ONZE = Integer.parseInt(onze);
+          //     int DOZE = Integer.parseInt(doze);
+           //    int TREZE = Integer.parseInt(treze);
+            //   int QUATOZE = Integer.parseInt(quatoze);
+         //      int QUINZE = Integer.parseInt(quinze);
+             //  int DESESEIS = Integer.parseInt(deseseis);
+          /*     int DESOITO =Integer.parseInt(desoito);
+               int DESENOVE = Integer.parseInt(desenove);
+               int VINTE = Integer.parseInt(vinte);
+               int VInTEUM = Integer.parseInt(vinteUm); */
+          int AA = Integer.parseInt( jTextField80.getText()); 
+          int[] TrezComplementos = new int[AA];
+               
+               int[] a = new int[4];
+             
+             if(NOVE == 1){
+             a[0] = UM;
+             TrezComplementos[0] = 1;
+             NOVE = 0;
+             //    JOptionPane.showMessageDialog(null, a[0]);
+             }else{}
+             if(ONZE == 1){
+             a[1] = UM;
+             TrezComplementos[1] = 1;
+             ONZE = 0;
+             //    JOptionPane.showMessageDialog(null, a[0]);
+             }else{}
+             
+
+          
+             
+             
+             int[] b = {0,1,2,3,4};
+             
+              int   tamanho  = TrezComplementos.length;
+               for (int j = 0; j < TrezComplementos.length; j ++){
+                System.out.print( TrezComplementos[j]);
+               }
+               System.out.print("/"+tamanho+"/");
+              
+               jTextField79.setText(""+TrezComplementos[0]);
+               jTextField81.setText(""+TrezComplementos[1]);
+               
+               
+              //int prima = Integer.parseInt( jTextField75.getText());
+
+             
+               
+                int[] Complementos = new int[AA];
+                
+               int primaMax2 = Integer.parseInt( jTextField76.getText());
+               int primaMax = Integer.parseInt( jTextField75.getText());
+               int primaMax3 = Integer.parseInt( jTextField77.getText());
+               int primaMax4 = Integer.parseInt( jTextField78.getText());
+               int primaMax5 = Integer.parseInt( jTextField79.getText());
+               int primaMax6 = Integer.parseInt( jTextField81.getText());
+               
+               if(primaMax == 1){
+                   Complementos[0] = 1;
+               }
+               if(primaMax2 == 1){
+                   Complementos[1] = 1;
+               }
+                if(primaMax3 == 1){
+                   Complementos[2] = 1;
+               }
+                if(primaMax4 == 1){
+                   Complementos[3] = 1;
+               }
+                if(primaMax5 == 1){
+                   Complementos[4] = 1;
+               }
+                if(primaMax6 == 1){
+                   Complementos[5] = 1;
+               }
+                 //int   tamanho  = Complementos.length;
+                 int t  = Complementos.length;
+               for (int j = 0; j < TrezComplementos.length; j ++){
+                System.out.print( TrezComplementos[j]);
+               }
+               System.out.print("/"+t+"/");
+               jTextField82.setText(""+t);
+               
+               if(t ==4){
+               JOptionPane.showMessageDialog(null, "acai de 3 4 compontes");
+               }
+               
+               if(t ==5){
+               JOptionPane.showMessageDialog(null, "acai de 5 com 5 compontes");
+               }
+               
+               if(t ==4){
+               JOptionPane.showMessageDialog(null, "acai de 3 4 compontes");
+               }
+               
+               
+               
+              int resutado =  UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * CETE + SETE * OITO + NOVE * DEZ ; //6
+             // int resutado2 =  UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * CETE + SETE * OITO + NOVE * DEZ ;
+              
+              // int RESUTADO = UM * DOIS + TRES * QUATRO; // 3
+              // int res1 =  UM * DOIS + TRES * QUATRO + CINCO * SEIS; //4 linhas
+              // int res2 = Resutado1 + SETE * OITO;  //6 linhas
+              // int res3 = res2 + NOVE * DEZ;  //7
+             //  int res4 = res2 + ONZE * DOZE; //8
+              // int res5 = res4 + TREZE * QUATOZE; //9
+             //  int res6 = res5 + QUINZE *DESESEIS;
+              // int res7 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE;
+              // int res8 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE +VINTE * VInTEUM;
+               
+               String quantidade = jTextField13not.getText();
+               int Quantidade = Integer.parseInt(quantidade); 
+              // int valor = 3;
+               // Nao ta no 3
+           //    if (Quantidade !=6){
+              // jTextField30.setText(""+res2);
+               
+             
+               if(Quantidade !=6){
+              // jTextField30.setText(""+res3);
+              // System.out.print(res3);
+              
+              
+               }else{
+               jTextField30.setText(""+resutado);
+               }
+             //  }else{
+             //     jTextField30.setText(""+res2); 
+             //  }
+               
+               // jTextField13.setText("ta vasio");
+             
+              // jTextField30.setText(""+RESUTADO);
+               //jTextField12.setText(""+RESUTADO);
+             /*  jTextField13.setText(""+res1);
+               jTextField12.setText(""+res2);
+               jTextField13.setText(""+res2);
+               jTextField12.setText(""+res3);
+               jTextField13.setText(""+res3);
+               jTextField12.setText(""+res4);
+               jTextField13.setText(""+res4);
+               jTextField12.setText(""+res5);
+               jTextField13.setText(""+res5);
+               jTextField12.setText(""+res6);
+               jTextField13.setText(""+res6);
+               jTextField12.setText(""+res7);
+               jTextField13.setText(""+res8); */
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jTextField44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField44ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField44ActionPerformed
+
+    private void jTextField59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField59ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField59ActionPerformed
+
+    private void jTextField72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField72ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField72ActionPerformed
+
+    private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField27ActionPerformed
+
+    private void jTextField39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField39ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField39ActionPerformed
+
+    private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField34ActionPerformed
+
+    private void cbo_ConplementosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbo_ConplementosMouseClicked
+String box = cbo_Conplementos.getSelectedItem().toString();
+        String boxy = cbo_quat.getSelectedItem().toString();
+        
+        String[] Lanche = box.split(";");
+       // System.out.print(Lanche[0]); //nome
+        //System.out.print(Lanche[1]); //tamanho
+       // System.out.print(Lanche[2]); //valor
+       
+       jTextField7.setText(Lanche[2]);
+       String valor =  jTextField7.getText();
+       String mega =  valor;
+       int Mega = Integer.parseInt(mega);
+       
+       
+        
+        jTextField1.setText("O valor R$"+Lanche[2]+" a quantidade "+boxy);
+        int BOX = Integer.parseInt(Lanche[2]);
+        int BOXY = Integer.parseInt(boxy);
+        int res = BOXY * BOX;
+        jTextField2.setText(""+res);
+        
+        jTextField3.setText(Lanche[0]+Lanche[1]+Lanche[2]);
+        String escolha = jTextField3.getText();
+        
+        jTextField4.setText(boxy);
+        String quantidade = jTextField4.getText();
+        
+        String Valor = jTextField2.getText();
+        
+        
+        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        dtm.addRow(new Object[]{escolha,Valor,quantidade,"",""});
+        
+       
+        
+       
+        
+      String texto[] = new String[10];
+       // texto[0] =  jTextField3.getText();// escolha
+        texto[1] = jTextField2.getText(); // valor
+        texto[2] = jTextField4.getText(); // quantidade 
+       
+        
+       // System.out.print(texto[0] +" "+ texto[1] + " "+ texto[2] +" "); 
+       
+        System.out.print(escolha);
+        
+        RegistroDaTabela registroDaTabela = new RegistroDaTabela();
+        
+        registroDaTabela.setQuantia(jTextField2.getText()); // valor
+       // registroDaTabela.setValorTotal(jTextField3.getText()); // lanche 
+        registroDaTabela.setQuantida(jTextField4.getText()); // quantidade 
+        JOptionPane.showMessageDialog(null, registroDaTabela.sauvado());
+        
+        //String aSeparar = lerArquivo2()
+        
+        
+  /*         File arquivo = new File("C:\\Arquivos do programa/ControleDaTabela.txt");  
+
+      try {
+          FileReader fr = new FileReader(arquivo);   
+           BufferedReader br = new BufferedReader(fr);
+           
+
+                String linha = br.readLine();
+                
+                
+               // cbo_select.addItem("Selecione o serviço");
+                
+                while(linha != null){
+                    //cbo_select.addItem(linha);
+                   int obiter = Integer.parseInt(linha);
+                   int array[];
+                   new  array[0] = ;
+                   
+                    linha = br.readLine();
+                } 
+                              
+
+            
+              
+   } catch (Exception ex) {
+        Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
+    } */
+ 
+	/*	while((texto2 = br2.readLine()) != null){
+                    
+		
+			valores.add(texto2);
+                        valores.split();
+			System.out.print(valores);
+                                
+                               
+                        
+                     
+                            
+                       
+			
+		}		*/		
+		 try {
+             String filePath = ("C:\\Arquivos do programa/ControleDaTabela.txt");
+        File file = new File(filePath);
+            
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+          //  model.setColumnIdentifiers(columnsName);
+            
+            
+
+            
+            Object[] tableLines = br.lines().toArray();
+            //model.addRow(tableLines);
+            
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split(";");
+                model.addRow(dataRow);
+                jTextField8.setText(dataRow[0]);
+                jTextField9.setText(dataRow[1]);
+                jTextField10.setText(dataRow[2]);
+                jTextField11.setText(dataRow[3]);
+                jTextField14.setText(dataRow[4]);
+                jTextField15.setText(dataRow[5]);
+                jTextField16.setText(dataRow[6]);
+                jTextField17.setText(dataRow[7]);
+                jTextField18.setText(dataRow[8]);
+                jTextField19.setText(dataRow[9]);
+                jTextField20.setText(dataRow[10]);
+                jTextField21.setText(dataRow[11]);
+                jTextField22.setText(dataRow[12]);
+                jTextField23.setText(dataRow[13]);
+                jTextField24.setText(dataRow[14]);
+                jTextField25.setText(dataRow[15]);
+                jTextField26.setText(dataRow[16]);
+                jTextField27.setText(dataRow[17]);
+                jTextField28.setText(dataRow[18]);
+                jTextField29.setText(dataRow[19]);
+
+
+             /*  String um =  jTextField8.getText();
+               String dois = jTextField9.getText();
+               String tres = jTextField10.getText();
+               String quatro = jTextField11.getText();
+               
+               int UM = Integer.parseInt(um);
+               int DOIS = Integer.parseInt(dois);
+               int TRES =  Integer.parseInt(tres);
+               int QUATRO =  Integer.parseInt(quatro);
+               int RESUTADO = UM * DOIS;
+               System.out.print(RESUTADO);
+               jTextField12.setText(""+RESUTADO); */
+             
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+	jTextField13not.setText(""+jTable1.getRowCount());
+    
+         
+      
+        
+     
+        
+    }//GEN-LAST:event_cbo_ConplementosMouseClicked
+
+    private void jTextField74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField74ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField74ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+     // int Resutado1 = Integer.parseInt(resutado1);
+        
+        String um =  jTextField8.getText();
+               String dois = jTextField9.getText();
+              String tres = jTextField10.getText();
+               String quatro = jTextField11.getText();
+               String sinco = jTextField14.getText();
+                String seis = jTextField15.getText(); 
+               String sete =  jTextField16.getText();
+               String oito = jTextField17.getText();
+               String nove = jTextField18.getText();
+               String dez=  jTextField19.getText();
+               String onze =  jTextField20.getText();
+               String doze =  jTextField21.getText();
+               String treze = jTextField22.getText();
+               String quatoze =  jTextField23.getText();
+          //     String quinze = jTextField24.getText();
+           //    String deseseis =  jTextField25.getText();
+            /*   String desoito =  jTextField26.getText();
+               String desenove =  jTextField27.getText();
+               String vinte = jTextField28.getText();
+               String vinteUm =  jTextField29.getText(); */
+               
+               int UM = Integer.parseInt(um);
+               int DOIS = Integer.parseInt(dois);
+               int TRES =  Integer.parseInt(tres);
+               int QUATRO =  Integer.parseInt(quatro);
+               int CINCO= Integer.parseInt(sinco);
+               int SEIS = Integer.parseInt(seis);
+               int CETE = Integer.parseInt(oito);
+               int SETE = Integer.parseInt(sete);
+              int OITO = Integer.parseInt(oito);
+               int NOVE = Integer.parseInt(nove);
+               int DEZ = Integer.parseInt(dez);
+               int ONZE = Integer.parseInt(onze);
+               int DOZE = Integer.parseInt(doze);
+               int TREZE = Integer.parseInt(treze);
+               int QUATOZE = Integer.parseInt(quatoze);
+         //      int QUINZE = Integer.parseInt(quinze);
+             //  int DESESEIS = Integer.parseInt(deseseis);
+          /*     int DESOITO =Integer.parseInt(desoito);
+               int DESENOVE = Integer.parseInt(desenove);
+               int VINTE = Integer.parseInt(vinte);
+               int VInTEUM = Integer.parseInt(vinteUm); */
+               
+               
+            ///  int resutado =  UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * CETE + SETE * OITO + NOVE * DEZ ; //6
+              int resutado2 =  UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * CETE + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE;
+              
+              // int RESUTADO = UM * DOIS + TRES * QUATRO; // 3
+              // int res1 =  UM * DOIS + TRES * QUATRO + CINCO * SEIS; //4 linhas
+              // int res2 = Resutado1 + SETE * OITO;  //6 linhas
+              // int res3 = res2 + NOVE * DEZ;  //7
+             //  int res4 = res2 + ONZE * DOZE; //8
+              // int res5 = res4 + TREZE * QUATOZE; //9
+             //  int res6 = res5 + QUINZE *DESESEIS;
+              // int res7 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE;
+              // int res8 = UM * DOIS + TRES * QUATRO + CINCO * SEIS + SETE * OITO + NOVE * DEZ + ONZE * DOZE + TREZE * QUATOZE + QUINZE *DESESEIS + DESOITO * DESENOVE +VINTE * VInTEUM;
+               
+               String quantidade = jTextField13not.getText();
+               int Quantidade = Integer.parseInt(quantidade); 
+              // int valor = 3;
+               // Nao ta no 3
+           //    if (Quantidade !=6){
+              // jTextField30.setText(""+res2);
+               
+             
+               if(Quantidade !=8){
+              // jTextField30.setText(""+res3);
+              // System.out.print(res3);
+              
+
+               }else{
+               jTextField30.setText(""+resutado2);
+               }
+             //  }else{
+             //     jTextField30.setText(""+res2); 
+             //  }
+               
+               // jTextField13.setText("ta vasio");
+             
+              // jTextField30.setText(""+RESUTADO);
+               //jTextField12.setText(""+RESUTADO);
+             /*  jTextField13.setText(""+res1);
+               jTextField12.setText(""+res2);
+               jTextField13.setText(""+res2);
+               jTextField12.setText(""+res3);
+               jTextField13.setText(""+res3);
+               jTextField12.setText(""+res4);
+               jTextField13.setText(""+res4);
+               jTextField12.setText(""+res5);
+               jTextField13.setText(""+res5);
+               jTextField12.setText(""+res6);
+               jTextField13.setText(""+res6);
+               jTextField12.setText(""+res7);
+               jTextField13.setText(""+res8); */
+        
+        
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void cbo_ConplementosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_ConplementosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbo_ConplementosActionPerformed
+
+    private void jTextField76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField76ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField76ActionPerformed
+    private static final Logger LOG = Logger.getLogger(PerfilDoCliente.class.getName());
+
+    public PerfilDoCliente(JTable jTable1, JTextField jTextField1, String string) throws HeadlessException {
+
+        
+    }
+ 
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PerfilDoCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PerfilDoCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PerfilDoCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PerfilDoCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new PerfilDoCliente().setVisible(true);
+        });
+    }
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbo_Conplementos;
+    private javax.swing.JComboBox<String> cbo_quat;
+    public javax.swing.JComboBox<String> cbo_select;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton777;
+    private javax.swing.JButton jButtonlink;
+    private javax.swing.JButton jButtonlink1;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    public javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    public javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTextField jTestfildbig;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField13not;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
+    private javax.swing.JTextField jTextField35;
+    private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField jTextField37;
+    private javax.swing.JTextField jTextField38;
+    private javax.swing.JTextField jTextField39;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField40;
+    private javax.swing.JTextField jTextField41;
+    private javax.swing.JTextField jTextField42;
+    private javax.swing.JTextField jTextField43;
+    private javax.swing.JTextField jTextField44;
+    private javax.swing.JTextField jTextField45;
+    private javax.swing.JTextField jTextField46;
+    private javax.swing.JTextField jTextField47;
+    private javax.swing.JTextField jTextField48;
+    private javax.swing.JTextField jTextField49;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField50;
+    private javax.swing.JTextField jTextField51;
+    private javax.swing.JTextField jTextField52;
+    private javax.swing.JTextField jTextField53;
+    private javax.swing.JTextField jTextField54;
+    private javax.swing.JTextField jTextField55;
+    private javax.swing.JTextField jTextField56;
+    private javax.swing.JTextField jTextField57;
+    private javax.swing.JTextField jTextField58;
+    private javax.swing.JTextField jTextField59;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField60;
+    private javax.swing.JTextField jTextField61;
+    private javax.swing.JTextField jTextField62;
+    private javax.swing.JTextField jTextField63;
+    private javax.swing.JTextField jTextField64;
+    private javax.swing.JTextField jTextField65;
+    private javax.swing.JTextField jTextField66;
+    private javax.swing.JTextField jTextField67;
+    private javax.swing.JTextField jTextField68;
+    private javax.swing.JTextField jTextField69;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField70;
+    private javax.swing.JTextField jTextField71;
+    private javax.swing.JTextField jTextField72;
+    private javax.swing.JTextField jTextField73;
+    private javax.swing.JTextField jTextField74;
+    private javax.swing.JTextField jTextField75;
+    private javax.swing.JTextField jTextField76;
+    private javax.swing.JTextField jTextField77;
+    private javax.swing.JTextField jTextField78;
+    private javax.swing.JTextField jTextField79;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField80;
+    private javax.swing.JTextField jTextField81;
+    private javax.swing.JTextField jTextField82;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextFieldPath;
+    private javax.swing.JTextField jTextFieldPath1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField texREs;
+    public javax.swing.JTextField txT_AniversarioUSUARIO;
+    public javax.swing.JTextField txT_AniversarioUSUARIO1;
+    public javax.swing.JTextField txT_BairroUSUARIO;
+    public javax.swing.JTextField txT_BairroUSUARIO1;
+    public javax.swing.JTextField txT_CelularUSUARIO2;
+    public javax.swing.JTextField txT_CelularUSUARIO3;
+    public javax.swing.JTextField txT_CodigoUSUARIO;
+    public javax.swing.JTextField txT_CodigoUSUARIO1;
+    public javax.swing.JTextField txT_EmailUSUARIO;
+    public javax.swing.JTextField txT_EmailUSUARIO1;
+    public javax.swing.JTextField txT_EnderecoUSUARIO;
+    public javax.swing.JTextField txT_EnderecoUSUARIO1;
+    public javax.swing.JTextField txT_EnderecoUSUARIO2;
+    public javax.swing.JTextField txT_NomeUSUARIO;
+    public javax.swing.JTextField txT_Numero;
+    public javax.swing.JTextField txT_Numero1;
+    public javax.swing.JTextField txT_NumeroUSUARIO;
+    public javax.swing.JTextField txT_NumeroUSUARIO1;
+    public javax.swing.JTextField txT_ObiservacoesUSUARIO1;
+    public javax.swing.JTextField txT_ObiservacoesUSUARIO2;
+    public javax.swing.JTextField txT_dataUSUARIO;
+    public javax.swing.JTextField txT_dataUSUARIO1;
+    public javax.swing.JTextField txT_whatsUSUARIO1;
+    public javax.swing.JTextField txT_whatsUSUARIO2;
+    // End of variables declaration//GEN-END:variables
+
+    private PopupMenu String(String[] dataRow) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  //  private String getValueAt(Object tableLine, int i) {
+   //     throw new UnjTableReceberedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  //  }
+
+    DefaultTableModel jTextField8(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private String setText(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private Object aSeparar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static class jComboBox {
+
+        public jComboBox() {
+        }
+    }
+
+    private static class ProgressToNewForm {
+
+        public ProgressToNewForm() {
+        }
+
+        private void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+
+}
