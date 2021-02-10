@@ -1374,6 +1374,11 @@ public class PerfilDoCliente extends javax.swing.JFrame {
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/8.png"))); // NOI18N
         jLabel30.setText("jLabel30");
+        jLabel30.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel30MouseMoved(evt);
+            }
+        });
         jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel30MouseClicked(evt);
@@ -2946,9 +2951,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                
                  int elemeno = Integer.parseInt( jTextField18.getText());
              
-               if(elemeno == 1){
-               JOptionPane.showMessageDialog(null, "acai de 3 com 4 compontes" );
-               }
+               
              
                int[] Complementos = new int[4];
                
@@ -2985,16 +2988,19 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                int  resutado = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3];
                if(resutado <4 ){
                 JOptionPane.showMessageDialog(null, "acai de 3 com 3 compontes");
-               }
+               }else{}
+               if(elemeno == 1){
+               JOptionPane.showMessageDialog(null, "acai de 3 com 4 compontes" );
+               }else{}
                
               
                    
                    
                    
-               if(prima != 1){
+              /* if(prima != 1){
                }else{
                JOptionPane.showMessageDialog(null, "vai comesar a putaria ha ha ha" );
-               }
+               }*/
              
                 JOptionPane.showMessageDialog(null, a[0]);
                 JOptionPane.showMessageDialog(null, a[1]);
@@ -3573,6 +3579,204 @@ String box = cbo_Conplementos.getSelectedItem().toString();
     private void jTextField76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField76ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField76ActionPerformed
+
+    private void jLabel30MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseMoved
+       // JOptionPane.showMessageDialog(null, "oiiiii");
+        
+           
+        
+        String um =  jTextField8.getText();
+               String dois = jTextField9.getText();
+               String tres = jTextField10.getText();
+             
+               String sinco = jTextField14.getText();
+               
+               String sete =  jTextField16.getText(); 
+               String nove = jTextField18.getText();
+               
+          
+               
+               int UM = Integer.parseInt(um);
+               int DOIS = Integer.parseInt(dois);
+               int TRES =  Integer.parseInt(tres);
+               
+               int CINCO= Integer.parseInt(sinco);
+               
+               
+               int SETE = Integer.parseInt(sete);
+               int NOVE = Integer.parseInt(nove);
+         
+            
+           
+              //3 CONPONETES 
+          /*   if (UM == 12){
+                 jTextField80.setText(""+4); 
+             }
+              if(UM==15){
+                     jTextField80.setText(""+4);
+              }
+              if(UM==21){
+                     jTextField80.setText(""+4);
+              }
+              if(UM==32){
+                    jTextField80.setText(""+4);
+              }
+              if(UM==39){
+                    jTextField80.setText(""+4);
+              }
+              
+              //5 CONPONEMTES
+             if(UM == 14){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 17){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 23){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 34){
+             jTextField80.setText(""+6);
+             }
+             if(UM == 43){
+             jTextField80.setText(""+6);
+             }
+             
+             //7 COMPONENTES
+             if(UM == 16){
+             jTextField80.setText(""+8);
+             }
+              if(UM == 19){
+             jTextField80.setText(""+8);
+             }
+               if(UM == 25){
+             jTextField80.setText(""+8);
+             }
+                if(UM == 36){
+             jTextField80.setText(""+8);
+             }
+                if(UM == 45){
+             jTextField80.setText(""+8);
+             }
+             int AA = Integer.parseInt( jTextField80.getText()); 
+             //int AA = 4;
+                
+                int[] TrezComplementos = new int[AA];
+                
+               
+               int[] a = new int[4];
+             
+             if(UM == 1){
+             a[0] = UM;
+             TrezComplementos[0] = 1;
+             UM = 0;
+             
+             }else{
+             
+             }
+             
+             if(TRES == 1 ){
+             a[1] = TRES;
+             TrezComplementos[1] = 1;
+             TRES = 0;
+             }else{}
+             
+             if(CINCO == 1){
+             a[2] = CINCO;
+             TrezComplementos[2] = 1;
+             CINCO = 0;
+             }else{}
+             
+             if(SETE == 1){
+             a[3] = SETE;
+             TrezComplementos[3] = 1;
+             SETE = 0;
+             }else{}
+             
+
+             
+             
+             int[] b = {0,1,2,3,4};
+             
+              int   tamanho  = TrezComplementos.length;
+               for (int j = 0; j < TrezComplementos.length; j ++){
+                System.out.print( TrezComplementos[j]);
+               }
+               System.out.print("/"+tamanho+"/");
+              
+               jTextField75.setText(""+TrezComplementos[0]);
+               jTextField76.setText(""+TrezComplementos[1]);
+               jTextField77.setText(""+TrezComplementos[2]);
+               jTextField78.setText(""+TrezComplementos[3]);
+               
+                // int elemeno = Integer.parseInt( jTextField18.getText());
+             
+               
+             
+               int[] Complementos = new int[4];
+               
+               int eu = Integer.parseInt( jTextField75.getText());
+               int eu2 = Integer.parseInt(jTextField76.getText());
+               int eu3 =  Integer.parseInt(jTextField77.getText());
+               int eu4 =  Integer.parseInt(jTextField78.getText());
+
+               
+               if(eu == 1){
+                   Complementos[0] = 1;
+               }
+               if(eu2 == 1){
+                   Complementos[1] = 1;
+               }
+                if(eu3 == 1){
+                   Complementos[2] = 1;
+               }
+                if(eu4 == 1){
+                   Complementos[3] = 1;
+               }
+
+               
+              
+                 //int   tamanho  = Complementos.length;
+                 int t  = Complementos.length;
+               for (int j = 0; j < TrezComplementos.length; j ++){
+                System.out.print( TrezComplementos[j]);
+               }
+               System.out.print("/"+t+"/");
+               
+               
+               
+               int  resutado = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3];
+                //int  resutado = 3;
+               if(resutado ==3 ){
+                JOptionPane.showMessageDialog(null, "acai de 3 com 3 compontes");
+ 
+               }else{}
+
+             
+                JOptionPane.showMessageDialog(null, a[0]);
+                JOptionPane.showMessageDialog(null, a[1]);
+                JOptionPane.showMessageDialog(null, a[2]);
+                JOptionPane.showMessageDialog(null, a[3]);
+
+               */
+               
+          
+             if(NOVE !=1){
+                 int res2 = UM * DOIS;
+             
+              jTextField30.setText("e com 3");
+             
+             }else{
+              int res =UM * DOIS +NOVE;
+              jTextField30.setText(""+res);
+             }
+                     
+            
+
+               
+       
+            
+    }//GEN-LAST:event_jLabel30MouseMoved
     private static final Logger LOG = Logger.getLogger(PerfilDoCliente.class.getName());
 
     public PerfilDoCliente(JTable jTable1, JTextField jTextField1, String string) throws HeadlessException {
