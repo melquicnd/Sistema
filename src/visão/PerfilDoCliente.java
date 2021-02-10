@@ -117,7 +117,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jTextField14.setBackground(new java.awt.Color(0,0,0,0));
         jTextField15.setBackground(new java.awt.Color(0,0,0,0));
         jTextField16.setBackground(new java.awt.Color(0,0,0,0));
-        jTextField17.setBackground(new java.awt.Color(0,0,0,0));
+       // jTextField17.setBackground(new java.awt.Color(0,0,0,0));
         jTextField18.setBackground(new java.awt.Color(0,0,0,0));
         jTextField19.setBackground(new java.awt.Color(0,0,0,0));
         jTextField20.setBackground(new java.awt.Color(0,0,0,0));
@@ -997,7 +997,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField17);
-        jTextField17.setBounds(0, 240, 0, 14);
+        jTextField17.setBounds(0, 240, 90, 14);
 
         jTextField18.setBorder(null);
         jTextField18.addActionListener(new java.awt.event.ActionListener() {
@@ -2943,7 +2943,12 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                jTextField76.setText(""+TrezComplementos[1]);
                jTextField77.setText(""+TrezComplementos[2]);
                jTextField78.setText(""+TrezComplementos[3]);
+               
+                 int elemeno = Integer.parseInt( jTextField18.getText());
              
+               if(elemeno == 1){
+               JOptionPane.showMessageDialog(null, "acai de 3 com 4 compontes" );
+               }
              
                int[] Complementos = new int[4];
                
@@ -2951,6 +2956,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                int safada = Integer.parseInt(jTextField76.getText());
                int gostosa =  Integer.parseInt(jTextField77.getText());
                int pegava =  Integer.parseInt(jTextField78.getText());
+
                
                if(prima == 1){
                    Complementos[0] = 1;
@@ -2959,11 +2965,13 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                    Complementos[1] = 1;
                }
                 if(gostosa == 1){
-                   Complementos[1] = 1;
+                   Complementos[2] = 1;
                }
                 if(pegava == 1){
-                   Complementos[1] = 1;
+                   Complementos[3] = 1;
                }
+
+               
               
                  //int   tamanho  = Complementos.length;
                  int t  = Complementos.length;
@@ -2972,15 +2980,17 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                }
                System.out.print("/"+t+"/");
                
-               int  resutado = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3] ;
+               
+               
+               int  resutado = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3];
                if(resutado <4 ){
                 JOptionPane.showMessageDialog(null, "acai de 3 com 3 compontes");
                }
                
-               if(t ==3){
-               JOptionPane.showMessageDialog(null, "acai de 3 com 4  compontes");
-               } 
-               
+              
+                   
+                   
+                   
                if(prima != 1){
                }else{
                JOptionPane.showMessageDialog(null, "vai comesar a putaria ha ha ha" );
@@ -3144,6 +3154,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                
                 int[] Complementos = new int[AA];
                 
+                
                int primaMax2 = Integer.parseInt( jTextField76.getText());
                int primaMax = Integer.parseInt( jTextField75.getText());
                int primaMax3 = Integer.parseInt( jTextField77.getText());
@@ -3171,23 +3182,30 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                }
                  //int   tamanho  = Complementos.length;
                  int t  = Complementos.length;
-               for (int j = 0; j < TrezComplementos.length; j ++){
-                System.out.print( TrezComplementos[j]);
+               for (int j = 0; j < Complementos.length; j ++){
+                System.out.print( Complementos[j]);
                }
                System.out.print("/"+t+"/");
-               jTextField82.setText(""+t);
+               //jTextField82.setText("tamanho é = "+t);jTextField17
                
-               if(t ==4){
-               JOptionPane.showMessageDialog(null, "acai de 3 4 compontes");
+               
+               int resutadoo = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3] + Complementos[4] + Complementos[5];
+               jTextField82.setText("tamanho é = "+resutadoo);
+                int  numero = Integer.parseInt( jTextField18.getText());
+                if(numero == 1){
+                 int resutad2 = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3] + Complementos[4] + Complementos[5];
+                }
+               if(resutadoo ==4){
+               JOptionPane.showMessageDialog(null, "acai de 3 com 4 compontes");
                }
                
-               if(t ==5){
+               if(resutadoo ==5){
                JOptionPane.showMessageDialog(null, "acai de 5 com 5 compontes");
                }
                
-               if(t ==4){
+              /* if(t ==4){
                JOptionPane.showMessageDialog(null, "acai de 3 4 compontes");
-               }
+               } */
                
                
                
