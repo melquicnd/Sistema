@@ -152,24 +152,42 @@ public class ListaVIP extends javax.swing.JFrame {
         jButton4.setBorder(null);
         getContentPane().add(jButton4);
         jButton4.setBounds(140, 460, 90, 80);
+
+        jTextField2.setBorder(null);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(30, 10, 100, 20);
+        jTextField2.setBounds(30, 10, 0, 14);
+
+        jTextField3.setBorder(null);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(30, 40, 100, 20);
+        jTextField3.setBounds(30, 40, 0, 14);
+
+        jTextField4.setBorder(null);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(30, 70, 100, 20);
+        jTextField4.setBounds(30, 70, 0, 14);
+
+        jTextField5.setBorder(null);
         getContentPane().add(jTextField5);
-        jTextField5.setBounds(30, 100, 100, 20);
+        jTextField5.setBounds(30, 100, 0, 14);
+
+        jTextField6.setBorder(null);
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(30, 130, 100, 20);
+        jTextField6.setBounds(30, 130, 0, 14);
+
+        jTextField7.setBorder(null);
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(30, 160, 100, 20);
+        jTextField7.setBounds(30, 160, 0, 14);
+
+        jTextField8.setBorder(null);
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(140, 10, 100, 20);
+        jTextField8.setBounds(140, 10, 0, 14);
+
+        jTextField9.setBorder(null);
         getContentPane().add(jTextField9);
-        jTextField9.setBounds(140, 40, 100, 20);
+        jTextField9.setBounds(140, 40, 0, 14);
+
+        jTextField10.setBorder(null);
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(140, 70, 90, 20);
+        jTextField10.setBounds(140, 70, 0, 14);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/4.png"))); // NOI18N
         jLabel1.setText("jLabel1");

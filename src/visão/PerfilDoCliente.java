@@ -69,6 +69,46 @@ public class PerfilDoCliente extends javax.swing.JFrame {
     AlumnoVIP alumno = new AlumnoVIP();
     MetodosVIP metodos = new MetodosVIP();
     
+
+    
+    
+    //fuçao para calcular os totais
+    private void calcular()
+    {
+        
+     // fuçao para caucular o subtotal 
+        float suma = 0;
+        for( int i = 0; i < jTable1.getRowCount(); i++)
+        {
+            float renglon;
+            renglon = Float.parseFloat(jTable1.getValueAt(i, 1).toString());
+            
+            suma = suma + renglon;
+            
+        }
+
+         jTextField30.setText(String.valueOf(suma));
+  
+    }
+    private void calcularConponete()
+    {
+        
+         
+        float suma = 0;
+        for( int i = 0; i < jTable1.getRowCount(); i++)
+        {
+            float renglon;
+            renglon = Float.parseFloat(jTable1.getValueAt(i, 1).toString());
+            
+            suma = suma + renglon;
+            
+        }
+           double a=0.5;
+         jTextField30.setText(String.valueOf(suma - a));
+
+    }
+    
+    
     
     public PerfilDoCliente() {
         initComponents();
@@ -109,15 +149,19 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jTextField6.setBackground(new java.awt.Color(0,0,0,0));
         jTextField5.setBackground(new java.awt.Color(0,0,0,0));
         jTestfildbig.setBackground(new java.awt.Color(0,0,0,0));
+        jToggleButton1.setBackground(new java.awt.Color(0,0,0,0));
+        jButton6.setBackground(new java.awt.Color(0,0,0,0));
+        jButton3.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField82.setBackground(new java.awt.Color(0,0,0,0));
         
-      //  jTextField8.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField8.setBackground(new java.awt.Color(0,0,0,0));
         jTextField9.setBackground(new java.awt.Color(0,0,0,0));
        // jTextField10.setBackground(new java.awt.Color(0,0,0,0));
         jTextField11.setBackground(new java.awt.Color(0,0,0,0));
         jTextField14.setBackground(new java.awt.Color(0,0,0,0));
         jTextField15.setBackground(new java.awt.Color(0,0,0,0));
         jTextField16.setBackground(new java.awt.Color(0,0,0,0));
-       // jTextField17.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField17.setBackground(new java.awt.Color(0,0,0,0));
         jTextField18.setBackground(new java.awt.Color(0,0,0,0));
         jTextField19.setBackground(new java.awt.Color(0,0,0,0));
         jTextField20.setBackground(new java.awt.Color(0,0,0,0));
@@ -173,6 +217,19 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jTextField67.setBackground(new java.awt.Color(0,0,0,0));
         jTextField68.setBackground(new java.awt.Color(0,0,0,0));
         jTextField69.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField73.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField74.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField80.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField83.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField84.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField75.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField76.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField77.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField78.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField81.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField79.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField13not.setBackground(new java.awt.Color(0,0,0,0));
+        jTextField30.setBackground(new java.awt.Color(0,0,0,0));
         
         
        // t=new Timer(100,al);
@@ -361,9 +418,28 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jTextField80 = new javax.swing.JTextField();
         jTextField81 = new javax.swing.JTextField();
         jTextField82 = new javax.swing.JTextField();
+        jTextField83 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField84 = new javax.swing.JTextField();
+        jTextField85 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -762,6 +838,9 @@ public class PerfilDoCliente extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cbo_selectMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbo_selectMouseExited(evt);
+            }
         });
         cbo_select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -861,6 +940,11 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                 cbo_quatItemStateChanged(evt);
             }
         });
+        cbo_quat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbo_quatMouseClicked(evt);
+            }
+        });
         cbo_quat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbo_quatActionPerformed(evt);
@@ -911,7 +995,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(1190, 290, 67, 80);
+        jButton4.setBounds(1200, 260, 70, 80);
 
         jTextField4.setBorder(null);
         getContentPane().add(jTextField4);
@@ -944,11 +1028,11 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable2);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(120, 90, 230, 110);
+        jScrollPane2.setBounds(0, 650, 0, 10);
 
         jTextField8.setBorder(null);
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(0, 100, 110, 20);
+        jTextField8.setBounds(0, 100, 0, 20);
 
         jTextField9.setBorder(null);
         getContentPane().add(jTextField9);
@@ -961,22 +1045,24 @@ public class PerfilDoCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(0, 140, 110, 14);
+        jTextField10.setBounds(0, 140, 0, 14);
 
         jTextField11.setBorder(null);
         getContentPane().add(jTextField11);
         jTextField11.setBounds(0, 160, 0, 14);
 
-        jToggleButton1.setText("caucular");
+        jToggleButton1.setBorder(null);
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jToggleButton1);
-        jToggleButton1.setBounds(920, 570, 73, 23);
+        jToggleButton1.setBounds(920, 541, 80, 30);
+
+        jTextField13not.setBorder(null);
         getContentPane().add(jTextField13not);
-        jTextField13not.setBounds(730, 510, 200, 40);
+        jTextField13not.setBounds(730, 510, 0, 40);
 
         jTextField14.setBorder(null);
         getContentPane().add(jTextField14);
@@ -997,7 +1083,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField17);
-        jTextField17.setBounds(0, 240, 90, 14);
+        jTextField17.setBounds(0, 240, 0, 14);
 
         jTextField18.setBorder(null);
         jTextField18.addActionListener(new java.awt.event.ActionListener() {
@@ -1058,8 +1144,9 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jTextField29.setBounds(0, 480, 0, 14);
 
         jTextField30.setText("0");
+        jTextField30.setBorder(null);
         getContentPane().add(jTextField30);
-        jTextField30.setBounds(720, 600, 190, 30);
+        jTextField30.setBounds(720, 600, 180, 30);
 
         jButton5.setText("jButton5");
         jButton5.setBorder(null);
@@ -1075,14 +1162,14 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         getContentPane().add(jTextField12);
         jTextField12.setBounds(260, 130, 0, 14);
 
-        jButton6.setText("caucar 2");
+        jButton6.setBorder(null);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(920, 600, 90, 23);
+        jButton6.setBounds(920, 600, 1, 1);
 
         jButton7.setText("jButton7");
         jButton7.setBorder(null);
@@ -1316,62 +1403,148 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         });
         getContentPane().add(cbo_Conplementos);
         cbo_Conplementos.setBounds(790, 150, 310, 20);
+
+        jTextField73.setBorder(null);
         getContentPane().add(jTextField73);
-        jTextField73.setBounds(560, 70, 80, 20);
-
-        jLabel33.setText("jLabel33");
+        jTextField73.setBounds(560, 70, 0, 14);
         getContentPane().add(jLabel33);
-        jLabel33.setBounds(640, 260, 50, 60);
+        jLabel33.setBounds(640, 200, 50, 40);
 
+        jTextField74.setBorder(null);
         jTextField74.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField74ActionPerformed(evt);
             }
         });
         getContentPane().add(jTextField74);
-        jTextField74.setBounds(560, 90, 70, 20);
+        jTextField74.setBounds(560, 90, 0, 14);
 
-        jButton3.setText("caucaar3");
+        jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(920, 630, 90, 23);
-        getContentPane().add(jTextField75);
-        jTextField75.setBounds(690, 10, 80, 20);
+        jButton3.setBounds(920, 630, 1, 1);
 
+        jTextField75.setBorder(null);
+        getContentPane().add(jTextField75);
+        jTextField75.setBounds(690, 10, 0, 14);
+
+        jTextField76.setBorder(null);
         jTextField76.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField76ActionPerformed(evt);
             }
         });
         getContentPane().add(jTextField76);
-        jTextField76.setBounds(690, 30, 80, 20);
+        jTextField76.setBounds(690, 30, 0, 14);
 
-        jTextField77.setText("jTextField77");
+        jTextField77.setBorder(null);
         getContentPane().add(jTextField77);
-        jTextField77.setBounds(690, 50, 80, 20);
+        jTextField77.setBounds(690, 50, 0, 14);
 
-        jTextField78.setText("jTextField78");
+        jTextField78.setBorder(null);
         getContentPane().add(jTextField78);
-        jTextField78.setBounds(690, 70, 80, 20);
+        jTextField78.setBounds(690, 70, 0, 14);
 
-        jTextField79.setText("jTextField79");
+        jTextField79.setBorder(null);
         getContentPane().add(jTextField79);
-        jTextField79.setBounds(770, 70, 80, 20);
+        jTextField79.setBounds(770, 70, 0, 14);
+
+        jTextField80.setBorder(null);
+        jTextField80.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField80ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField80);
-        jTextField80.setBounds(0, 560, 70, 20);
+        jTextField80.setBounds(0, 560, 0, 14);
 
-        jTextField81.setText("jTextField81");
+        jTextField81.setBorder(null);
         getContentPane().add(jTextField81);
-        jTextField81.setBounds(770, 50, 80, 20);
+        jTextField81.setBounds(770, 50, 0, 14);
 
-        jTextField82.setText("jTextField82");
+        jTextField82.setBorder(null);
         getContentPane().add(jTextField82);
-        jTextField82.setBounds(940, 0, 90, 20);
+        jTextField82.setBounds(940, 0, 0, 14);
+        getContentPane().add(jTextField83);
+        jTextField83.setBounds(0, 590, 0, 20);
 
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel34.setForeground(java.awt.Color.white);
+        jLabel34.setText("Valor Total :");
+        getContentPane().add(jLabel34);
+        jLabel34.setBounds(720, 564, 110, 20);
+
+        jTextField84.setBorder(null);
+        getContentPane().add(jTextField84);
+        jTextField84.setBounds(80, 510, 0, 14);
+        getContentPane().add(jTextField85);
+        jTextField85.setBounds(500, 70, 120, 30);
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel40.setForeground(java.awt.Color.white);
+        jLabel40.setText("Rua");
+        getContentPane().add(jLabel40);
+        jLabel40.setBounds(100, 234, 60, 20);
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel35.setForeground(java.awt.Color.white);
+        jLabel35.setText("Pontos :");
+        getContentPane().add(jLabel35);
+        jLabel35.setBounds(500, 40, 90, 30);
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel39.setForeground(java.awt.Color.white);
+        jLabel39.setText("Nome ");
+        getContentPane().add(jLabel39);
+        jLabel39.setBounds(100, 160, 50, 30);
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel43.setForeground(java.awt.Color.white);
+        jLabel43.setText("Numero");
+        getContentPane().add(jLabel43);
+        jLabel43.setBounds(100, 304, 70, 20);
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel44.setForeground(java.awt.Color.white);
+        jLabel44.setText("Bairro ");
+        getContentPane().add(jLabel44);
+        jLabel44.setBounds(280, 304, 50, 20);
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel45.setForeground(java.awt.Color.white);
+        jLabel45.setText("Data de aniversario");
+        getContentPane().add(jLabel45);
+        jLabel45.setBounds(470, 304, 140, 20);
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel46.setForeground(java.awt.Color.white);
+        jLabel46.setText("Email");
+        getContentPane().add(jLabel46);
+        jLabel46.setBounds(100, 374, 60, 20);
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel47.setForeground(java.awt.Color.white);
+        jLabel47.setText("whatsApp");
+        getContentPane().add(jLabel47);
+        jLabel47.setBounds(100, 444, 80, 20);
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel48.setForeground(java.awt.Color.white);
+        jLabel48.setText("Telefone");
+        getContentPane().add(jLabel48);
+        jLabel48.setBounds(360, 440, 70, 30);
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel49.setForeground(java.awt.Color.white);
+        jLabel49.setText("Obiservações");
+        getContentPane().add(jLabel49);
+        jLabel49.setBounds(100, 504, 100, 30);
+
+        jLabel30.setForeground(java.awt.Color.white);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/8.png"))); // NOI18N
         jLabel30.setText("jLabel30");
         jLabel30.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -1396,6 +1569,32 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jLabel32.setText("jLabel32");
         getContentPane().add(jLabel32);
         jLabel32.setBounds(1300, 500, 437, 160);
+
+        jLabel36.setForeground(java.awt.Color.white);
+        jLabel36.setText("jLabel36");
+        getContentPane().add(jLabel36);
+        jLabel36.setBounds(500, 34, 40, 30);
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel37.setForeground(java.awt.Color.white);
+        jLabel37.setText("Pontos :");
+        getContentPane().add(jLabel37);
+        jLabel37.setBounds(500, 40, 90, 30);
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel38.setForeground(java.awt.Color.white);
+        jLabel38.setText("Pontos :");
+        getContentPane().add(jLabel38);
+        jLabel38.setBounds(500, 40, 90, 30);
+
+        jLabel41.setText("jLabel41");
+        getContentPane().add(jLabel41);
+        jLabel41.setBounds(100, 304, 70, 20);
+
+        jLabel42.setForeground(java.awt.Color.white);
+        jLabel42.setText("jLabel42");
+        getContentPane().add(jLabel42);
+        jLabel42.setBounds(100, 304, 60, 20);
 
         setSize(new java.awt.Dimension(1356, 697));
         setLocationRelativeTo(null);
@@ -1428,14 +1627,6 @@ public class PerfilDoCliente extends javax.swing.JFrame {
             }
         }
 
-
-
-        
-        
-        
-      
-    
-        
         
         File arquivo = new File("C:\\Arquivos do programa/Alumnos.txt");  
 
@@ -1557,11 +1748,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
 
     private void cbo_selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_selectActionPerformed
                                   
-        //cbo_select.getSelectedItem();
-       // int indexs[] = 
-        
-      // BufferedReader br = new BufferedReader(cbo_select.getSelectedItem().toString());
-      // String firstLine = br .readLine();
+
        
     }//GEN-LAST:event_cbo_selectActionPerformed
 
@@ -1758,18 +1945,35 @@ public class PerfilDoCliente extends javax.swing.JFrame {
                 jTextField29.setText(dataRow[19]);
 
 
-             /*  String um =  jTextField8.getText();
-               String dois = jTextField9.getText();
-               String tres = jTextField10.getText();
-               String quatro = jTextField11.getText();
                
-               int UM = Integer.parseInt(um);
-               int DOIS = Integer.parseInt(dois);
+               String nove =  jTextField18.getText();
+               
+             /*  String dois = jTextField9.getText();
+               String tres = jTextField10.getText();
+               String quatro = jTextField11.getText(); */
+               
+               
+               int Nove = Integer.parseInt(nove);
+            /*   int DOIS = Integer.parseInt(dois);
                int TRES =  Integer.parseInt(tres);
                int QUATRO =  Integer.parseInt(quatro);
                int RESUTADO = UM * DOIS;
                System.out.print(RESUTADO);
                jTextField12.setText(""+RESUTADO); */
+             
+             
+             //3 CONPONETES
+             if (Nove == 12){
+                 jTextField84.setText("deu certo"); 
+             }else {
+             jTextField84.setText("nao deu certo"); 
+             }
+             
+             
+                
+                
+            // int AA = Integer.parseInt( jTextField80.getText()); 
+             //int AA = 4;
              
             }
             
@@ -1778,8 +1982,10 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         } 
         
 	jTextField13not.setText(""+jTable1.getRowCount());
-    
-         
+        
+
+         //calcular totai
+         calcular();
       
         
         
@@ -1955,6 +2161,8 @@ public class PerfilDoCliente extends javax.swing.JFrame {
     //    registroDeCompra.setPedido(pedidos);
        
         registroDeCompra.setResutado(jTextField30.getText());
+      //  registroDeCompra.setResutado(jTextField85.getText());
+        
        
     /*    registroDeCompra.setNome(txT_NomeUSUARIO.getText());
         registroDeCompra.setEndereço(txT_EnderecoUSUARIO.getText());
@@ -1973,7 +2181,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         
         
         try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
+            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());  //Atençao
             // jTextField1.setText("");
             // texREs.setText("");
             
@@ -1988,518 +2196,8 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         
         
         
-        try{
-        String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
-        File file = new File(filePath);
-            
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split(",");
-            DefaultTableModel model = (DefaultTableModel)jTable3.getModel();
-            model.setColumnIdentifiers(columnsName);
-            
-              
-            Object[] tableLines = br.lines().toArray();
-            model.addRow(tableLines);
-            
-            for(int i = 0; i < tableLines.length; i++){
-            
-                String line = tableLines[i].toString().trim();
-                String[] dataRow = line.split(";");
-                model.addRow(dataRow);
-                jTextField70.setText(dataRow[0]);
-                jTextField31.setText(dataRow[1]);
-                jTextField32.setText(dataRow[2]);
-                jTextField33.setText(dataRow[3]);
-                jTextField34.setText(dataRow[4]);
-                jTextField35.setText(dataRow[5]);
-                jTextField36.setText(dataRow[6]);
-                jTextField37.setText(dataRow[7]);
-                jTextField38.setText(dataRow[8]);
-                jTextField39.setText(dataRow[9]);
-                jTextField40.setText(dataRow[10]);
-                jTextField41.setText(dataRow[11]);
-                jTextField42.setText(dataRow[12]);
-                jTextField43.setText(dataRow[13]);
-                jTextField44.setText(dataRow[14]); 
-                jTextField45.setText(dataRow[15]);
-                jTextField46.setText(dataRow[16]);
-                jTextField47.setText(dataRow[17]);
-                jTextField48.setText(dataRow[18]);
-                jTextField49.setText(dataRow[19]);
-                
-                
-               
-                
-                int bloco1 = Integer.parseInt(jTextField70.getText());
-                
-                if(bloco1 != 0){
-                String Bloclo1 = ""+bloco1;
-                System.out.print(Bloclo1);
-                jTextField50.setText(Bloclo1);
-              //  RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-                
-                
-
-                  registroDeCompra.setResutado(jTextField50.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                int bloco2 = Integer.parseInt(jTextField31.getText());
-                
-                if(bloco2 != 0){
-                    String Bloclo2 = ""+bloco2;
-                System.out.print(Bloclo2);
-                jTextField51.setText(Bloclo2);
-               //   RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField51.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-         
-                 int bloco3 = Integer.parseInt(jTextField32.getText());
-                
-                if(bloco3 != 0){
-                    String Bloclo3 = ""+bloco3;
-                System.out.print(Bloclo3);
-                jTextField52.setText(Bloclo3);
-         //         RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField52.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco4 = Integer.parseInt(jTextField33.getText());
-                
-                if(bloco4 != 0){
-                    String Bloclo4 = ""+bloco4;
-                System.out.print(Bloclo4);
-                jTextField53.setText(Bloclo4);
-          //        RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField53.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco5 = Integer.parseInt(jTextField34.getText());
-                
-                if(bloco5 != 0){
-                    String Bloclo5 = ""+bloco5;
-                System.out.print(Bloclo5);
-               jTextField54.setText(Bloclo5);
-            //      RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField54.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco6 = Integer.parseInt(jTextField35.getText());
-                
-                if(bloco6 != 0){
-                    String Bloclo6 = ""+bloco6;
-                System.out.print(Bloclo6);
-               jTextField55.setText(Bloclo6);
-         //         RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField55.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco7 = Integer.parseInt(jTextField36.getText());
-                
-                if(bloco7 != 0){
-                    String Bloclo7 = ""+bloco7;
-                System.out.print(Bloclo7);
-               jTextField56.setText(Bloclo7);
-          //        RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField56.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-               
-                int bloco8 = Integer.parseInt(jTextField37.getText());
-                
-                if(bloco8 != 0){
-                    String Bloclo8 = ""+bloco8;
-                System.out.print(Bloclo8);
-               jTextField57.setText(Bloclo8);
-            //      RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField57.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco9 = Integer.parseInt(jTextField38.getText());
-                
-                if(bloco9 != 0){
-                    String Bloclo9 = ""+bloco9;
-                System.out.print(Bloclo9);
-               jTextField58.setText(Bloclo9);
-       //           RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField58.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-               
-                int bloco10 = Integer.parseInt(jTextField39.getText());
-                
-                if(bloco10 != 0){
-                    String Bloclo10 = ""+bloco10;
-                System.out.print(Bloclo10);
-               jTextField59.setText(Bloclo10);
-       //           RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField59.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco11 = Integer.parseInt(jTextField40.getText());
-                
-                if(bloco11 != 0){
-                    String Bloclo11 = ""+bloco11;
-                System.out.print(Bloclo11);
-               jTextField60.setText(Bloclo11);
-        //          RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField60.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco12 = Integer.parseInt(jTextField41.getText());
-                
-                if(bloco12 != 0){
-                    String Bloclo12 = ""+bloco12;
-                System.out.print(Bloclo12);
-               jTextField61.setText(Bloclo12);
-    //              RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField61.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco13 = Integer.parseInt(jTextField42.getText());
-                
-                if(bloco13 != 0){
-                    String Bloclo13 = ""+bloco13;
-                System.out.print(Bloclo13);
-               jTextField62.setText(Bloclo13);
-       //           RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField62.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco14 = Integer.parseInt(jTextField43.getText());
-                
-                if(bloco14 != 0){
-                    String Bloclo14 = ""+bloco14;
-                System.out.print(Bloclo14);
-               jTextField63.setText(Bloclo14);
-     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField63.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco15 = Integer.parseInt(jTextField44.getText());
-                
-                if(bloco15 != 0){
-                    String Bloclo15 = ""+bloco15;
-                System.out.print(Bloclo15);
-               jTextField64.setText(Bloclo15);
-     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField64.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                 int bloco16 = Integer.parseInt(jTextField45.getText());
-                
-                if(bloco16 != 0){
-                    String Bloclo16 = ""+bloco16;
-                System.out.print(Bloclo16);
-               jTextField65.setText(Bloclo16);
-     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField65.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco17 = Integer.parseInt(jTextField46.getText());
-                
-                if(bloco17 != 0){
-                    String Bloclo17 = ""+bloco17;
-                System.out.print(Bloclo17);
-               jTextField66.setText(Bloclo17);
-     //             RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField66.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                int bloco19 = Integer.parseInt(jTextField48.getText());
-                
-                if(bloco19 != 0){
-                    String Bloclo19 = ""+bloco19;
-                System.out.print(Bloclo19);
-               jTextField68.setText(Bloclo19);
-   //               RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField68.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                
-                 int bloco20 = Integer.parseInt(jTextField49.getText());
-                
-                if(bloco20 != 0){
-                    String Bloclo20 = ""+bloco20;
-                System.out.print(Bloclo20);
-               jTextField69.setText(Bloclo20);
-   //               RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField69.getText());
-                     try {
-            JOptionPane.showMessageDialog(null, registroDeCompra.sauvado());
-        } catch (IOException ex) {
-            Logger.getLogger(PerfilDoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                }else{
-                }
-                //METODO DE APAGAR
-                
-                
-                
-                
-                
-                
- 
-            }
-                }catch (Exception ex) {
-            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
-      
-        File file = new File("C:\\Arquivos do programa/ValorTotal.txt");
-       
-        try {
-        FileReader fr = new FileReader(file); 
-        BufferedReader br = new BufferedReader(fr);
-       
-        
-        String linha = br.readLine();
-        ArrayList<String> salvar = new ArrayList();
-        while(linha != null){
-            
-            String um = jTextField70.getText();
-            
-            
-            
-            String dois = jTextField31.getText();
-            String trez = jTextField32.getText();
-            String quatro = jTextField33.getText();
-            String cinco =   jTextField34.getText();
-            String seis = jTextField35.getText();
-            String sete = jTextField36.getText();
-            String oito = jTextField37.getText();
-            String nove = jTextField38.getText();
-            String dez =  jTextField39.getText();
-            String onze = jTextField40.getText();
-            String doze = jTextField41.getText();
-            String treze = jTextField42.getText();
-            String quatoze = jTextField43.getText();
-            String quise =  jTextField44.getText(); 
-            String deseseis = jTextField45.getText();
-            String desesete = jTextField46.getText();
-            String desoito = jTextField47.getText();
-            String desenove = jTextField48.getText();
-            String vinte = jTextField49.getText();
-                    
-           
-            
-            
-                  
-            if(linha.equals(um+";"+dois+";"+trez+";"+quatro+";"+cinco+";"+seis+";"+sete+";"+oito+";"+nove+";"+dez+";"+onze+";"+doze+";"+treze+";"+quatoze+";"+quise+";"+deseseis+";"+desesete+";"+desoito+";"+desenove+";"+vinte+";") == false){
-                salvar.add(linha);
-            //    JOptionPane.showMessageDialog(null,um+";"+dois+";"+trez+";"+quatro+";"+cinco+";"+seis+";"+sete+";"+oito+";"+nove+";"+dez+";"+onze+";"+doze+";"+treze+";"+quatoze+";"+quise+";"+deseseis+";"+desesete+";"+desoito+";"+desenove+";"+vinte+";");
-            }
-            linha = br.readLine();
-        }
-
-        br.close();
-        fr.close();
-        FileWriter fw2 = new FileWriter(file, true);
-        fw2.close();
-        
-        FileWriter fw = new FileWriter(file);
-        BufferedWriter bw = new BufferedWriter(fw);
-        
-            for (int i = 0; i < salvar.size(); i++) {
-            bw.write( salvar.get(i) );
-            bw.newLine();
-            
-            }
-            bw.close();
-            fw.close();
-        } catch (IOException e) {
-        }
-
         
         
-      //CONTAGEM PARA VER QUNTOS NUMEROS FATAOM PARA 20 
-      try{
-             String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
-        File filey = new File(filePath);
-            
-            BufferedReader br = new BufferedReader(new FileReader(filey));
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split(",");
-        //    DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
-          //  model.setColumnIdentifiers(columnsName);
-            
-              
-            Object[] tableLines = br.lines().toArray();
-            //model.addRow(tableLines);
-            
-            for(int i = 0; i < tableLines.length; i++)
-            {
-                String line = tableLines[i].toString().trim();
-                String[] dataRow = line.split(";");
-            //    integer[] valoresint = new integer(dataRow.length);
-                
-                
-              //  model.addRow(dataRow);
-                
-                
-              
-                
-                
-                
-               
-                
- 
-                
-                            int contador = 0;
-               for (int j = 0; j < dataRow.length; j ++){
-                if (dataRow[j] != null)
-                contador ++;
-                
-                jTextField71.setText(""+contador);
-                System.out.print(""+contador);
-
-               }int bloco = Integer.parseInt(jTextField71.getText());
-               
-               int contador2 = 0;
-                for (int j = 0; j < bloco; j++) {
-                    
-               contador2 ++;
-               if (contador2 <20){
-                   
-                   jTextField72.setText("0;");
-     //          RegistroDeCompra registroDeCompra = new RegistroDeCompra();
-
-                  registroDeCompra.setResutado(jTextField72.getText());
-                   
-
-               }
-                    
-                }
-   
-            
-             
-            }
-            
-        }catch (Exception ex) {
-            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }  
       
       
         
@@ -2579,8 +2277,8 @@ public class PerfilDoCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton777ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton777ActionPerformed
-         ImageIcon icon = new ImageIcon("C:\\Arquivos do programa/cliente.png");
-         jLabel33.setIcon( icon );
+       //  ImageIcon icon = new ImageIcon("C:\\Arquivos do programa/VIP1 ;).png");
+       //  jLabel33.setIcon( icon );
         
      
     /* alumno.setNome(txT_NomeUSUARIO.getText()); 
@@ -2676,7 +2374,8 @@ public class PerfilDoCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Favor selecionar uma linha");
         }  
         
-        
+        //calcular tatais
+        calcular();
         
         
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -3459,6 +3158,9 @@ String box = cbo_Conplementos.getSelectedItem().toString();
         
 	jTextField13not.setText(""+jTable1.getRowCount());
     
+         //calcular totai
+         calcularConponete();
+         
          
       
         
@@ -3563,7 +3265,7 @@ String box = cbo_Conplementos.getSelectedItem().toString();
                jTextField13.setText(""+res4);
                jTextField12.setText(""+res5);
                jTextField13.setText(""+res5);
-               jTextField12.setText(""+res6);
+               jTextField12.setText(""+res6); 
                jTextField13.setText(""+res6);
                jTextField12.setText(""+res7);
                jTextField13.setText(""+res8); */
@@ -3582,36 +3284,16 @@ String box = cbo_Conplementos.getSelectedItem().toString();
 
     private void jLabel30MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseMoved
        // JOptionPane.showMessageDialog(null, "oiiiii");
+      
+        int UM = Integer.valueOf(jTextField8.getText());
         
-           
-        
-        String um =  jTextField8.getText();
-               String dois = jTextField9.getText();
-               String tres = jTextField10.getText();
-             
-               String sinco = jTextField14.getText();
-               
-               String sete =  jTextField16.getText(); 
-               String nove = jTextField18.getText();
-               
-          
-               
-               int UM = Integer.parseInt(um);
-               int DOIS = Integer.parseInt(dois);
-               int TRES =  Integer.parseInt(tres);
-               
-               int CINCO= Integer.parseInt(sinco);
-               
-               
-               int SETE = Integer.parseInt(sete);
-               int NOVE = Integer.parseInt(nove);
-         
-            
-           
-              //3 CONPONETES 
-          /*   if (UM == 12){
+       
+       
+              //3 CONPONETES
+             if (UM == 12){
                  jTextField80.setText(""+4); 
              }
+             
               if(UM==15){
                      jTextField80.setText(""+4);
               }
@@ -3658,125 +3340,25 @@ String box = cbo_Conplementos.getSelectedItem().toString();
                 if(UM == 45){
              jTextField80.setText(""+8);
              }
-             int AA = Integer.parseInt( jTextField80.getText()); 
-             //int AA = 4;
                 
-                int[] TrezComplementos = new int[AA];
                 
-               
-               int[] a = new int[4];
-             
-             if(UM == 1){
-             a[0] = UM;
-             TrezComplementos[0] = 1;
-             UM = 0;
-             
-             }else{
-             
-             }
-             
-             if(TRES == 1 ){
-             a[1] = TRES;
-             TrezComplementos[1] = 1;
-             TRES = 0;
-             }else{}
-             
-             if(CINCO == 1){
-             a[2] = CINCO;
-             TrezComplementos[2] = 1;
-             CINCO = 0;
-             }else{}
-             
-             if(SETE == 1){
-             a[3] = SETE;
-             TrezComplementos[3] = 1;
-             SETE = 0;
-             }else{}
-             
-
-             
-             
-             int[] b = {0,1,2,3,4};
-             
-              int   tamanho  = TrezComplementos.length;
-               for (int j = 0; j < TrezComplementos.length; j ++){
-                System.out.print( TrezComplementos[j]);
-               }
-               System.out.print("/"+tamanho+"/");
-              
-               jTextField75.setText(""+TrezComplementos[0]);
-               jTextField76.setText(""+TrezComplementos[1]);
-               jTextField77.setText(""+TrezComplementos[2]);
-               jTextField78.setText(""+TrezComplementos[3]);
-               
-                // int elemeno = Integer.parseInt( jTextField18.getText());
-             
-               
-             
-               int[] Complementos = new int[4];
-               
-               int eu = Integer.parseInt( jTextField75.getText());
-               int eu2 = Integer.parseInt(jTextField76.getText());
-               int eu3 =  Integer.parseInt(jTextField77.getText());
-               int eu4 =  Integer.parseInt(jTextField78.getText());
-
-               
-               if(eu == 1){
-                   Complementos[0] = 1;
-               }
-               if(eu2 == 1){
-                   Complementos[1] = 1;
-               }
-                if(eu3 == 1){
-                   Complementos[2] = 1;
-               }
-                if(eu4 == 1){
-                   Complementos[3] = 1;
-               }
-
-               
-              
-                 //int   tamanho  = Complementos.length;
-                 int t  = Complementos.length;
-               for (int j = 0; j < TrezComplementos.length; j ++){
-                System.out.print( TrezComplementos[j]);
-               }
-               System.out.print("/"+t+"/");
-               
-               
-               
-               int  resutado = Complementos[0] + Complementos[1] + Complementos[2] + Complementos[3];
-                //int  resutado = 3;
-               if(resutado ==3 ){
-                JOptionPane.showMessageDialog(null, "acai de 3 com 3 compontes");
- 
-               }else{}
-
-             
-                JOptionPane.showMessageDialog(null, a[0]);
-                JOptionPane.showMessageDialog(null, a[1]);
-                JOptionPane.showMessageDialog(null, a[2]);
-                JOptionPane.showMessageDialog(null, a[3]);
-
-               */
-               
-          
-             if(NOVE !=1){
-                 int res2 = UM * DOIS;
-             
-              jTextField30.setText("e com 3");
-             
-             }else{
-              int res =UM * DOIS +NOVE;
-              jTextField30.setText(""+res);
-             }
-                     
-            
-
-               
        
-            
+       //calcular totai
+         calcular();
     }//GEN-LAST:event_jLabel30MouseMoved
+
+    private void cbo_quatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbo_quatMouseClicked
+        //calcula total
+        calcular();
+    }//GEN-LAST:event_cbo_quatMouseClicked
+
+    private void jTextField80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField80ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField80ActionPerformed
+
+    private void cbo_selectMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbo_selectMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbo_selectMouseExited
     private static final Logger LOG = Logger.getLogger(PerfilDoCliente.class.getName());
 
     public PerfilDoCliente(JTable jTable1, JTextField jTextField1, String string) throws HeadlessException {
@@ -3859,7 +3441,23 @@ String box = cbo_Conplementos.getSelectedItem().toString();
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -3956,6 +3554,9 @@ String box = cbo_Conplementos.getSelectedItem().toString();
     private javax.swing.JTextField jTextField80;
     private javax.swing.JTextField jTextField81;
     private javax.swing.JTextField jTextField82;
+    private javax.swing.JTextField jTextField83;
+    private javax.swing.JTextField jTextField84;
+    private javax.swing.JTextField jTextField85;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextFieldPath;
     private javax.swing.JTextField jTextFieldPath1;

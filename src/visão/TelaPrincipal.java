@@ -48,11 +48,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
        jButton5.setBackground(new java.awt.Color(0,0,0,0));
        jButton8.setBackground(new java.awt.Color(0,0,0,0));
        jButton1.setBackground(new java.awt.Color(0,0,0,0));
-       
-       
-
 
     }
+    
+    private void calcular()
+    {
+        
+     // fuçao para caucular o subtotal 
+        float suma = 0;
+        for( int i = 0; i < jTable1.getRowCount(); i++)
+        {
+            float renglon;
+            renglon = Float.parseFloat(jTable1.getValueAt(i, 0).toString());
+            
+            suma = suma + renglon;
+            
+        }
+
+         txT_Faturamento.setText(String.valueOf("R$"+suma));
+        // jTextField2.setText(String.valueOf(suma));
+  
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,6 +122,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -322,17 +342,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLabel16);
         jLabel16.setBounds(460, 120, 60, 14);
 
-        jButton2.setText("jButton2");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(1330, 0, 0, 0);
+
+        jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(1010, 210, 73, 23);
+        jButton2.setBounds(940, 180, 1, 1);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Tela inicial - 1300x700.png"))); // NOI18N
+        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel1MouseMoved(evt);
+            }
+        });
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -378,7 +416,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-try {
+ try{
+             String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
+        File file = new File(filePath);
+            
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            model.setColumnIdentifiers(columnsName);
+            
+              
+            Object[] tableLines = br.lines().toArray();
+            //model.addRow(tableLines);
+            
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split(";");
+            //    integer[] valoresint = new integer(dataRow.length);
+                model.addRow(dataRow);
+             }
+            
+        }catch (Exception ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+                
+        
+        
+        try {
              String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
         File file = new File(filePath);
             
@@ -587,7 +654,7 @@ try {
           int total = um +dois+ tres + quatro + cinco + seis + sete + oito +
                   nove + dez + onze + doze  + treze + quatoze + quise +deseseis +desesete + desoto +desenove + vinte;
             //     System.out.print(um);
-                txT_Faturamento.setText("R$"+total);
+           //     txT_Faturamento.setText("R$"+total);
                
             /* int soma = 0;
 
@@ -732,7 +799,8 @@ try {
                 Logger.getLogger(TelaRelatorioCistema.class.getName()).log(Level.SEVERE, null, ex);
             }
             int retorno = lnrR.getLineNumber();
-            String rere = Integer.toString(retorno);
+            int REs = retorno - 4;
+            String rere = Integer.toString(REs);
             txT_Total.setText(rere);
             
             
@@ -746,7 +814,7 @@ try {
             }
         }
         
-        
+       
         
 
 
@@ -840,7 +908,37 @@ try {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        try {
+try {
+             String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
+        File file = new File(filePath);
+            
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+        //    DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+          //  model.setColumnIdentifiers(columnsName);
+            
+              
+            Object[] tableLines = br.lines().toArray();
+            //model.addRow(tableLines);
+            
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split(";");
+                
+                 }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+//metodo de caucular o total
+          calcular();     
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
+   try {
              String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
         File file = new File(filePath);
             
@@ -1049,8 +1147,11 @@ try {
                 Logger.getLogger(TelaRelatorioCistema.class.getName()).log(Level.SEVERE, null, ex);
             }
             int retorno = lnrR.getLineNumber();
-            String rere = Integer.toString(retorno);
+            int REs = retorno - 4;
+            String rere = Integer.toString(REs);
             txT_Total.setText(rere);
+            
+            
             
             
         } catch (FileNotFoundException ex) {
@@ -1065,111 +1166,17 @@ try {
         
         
         
+        //metodo de caucular o total
+          calcular();
         
-       
         
-             
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_jLabel1MouseMoved
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
- try {
-             String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
-        File file = new File(filePath);
-            
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split(",");
-        //    DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
-          //  model.setColumnIdentifiers(columnsName);
-            
-              
-            Object[] tableLines = br.lines().toArray();
-            //model.addRow(tableLines);
-            
-            for(int i = 0; i < tableLines.length; i++)
-            {
-                String line = tableLines[i].toString().trim();
-                String[] dataRow = line.split(";");
-              //  model.addRow(dataRow);
-              
-                int um = Integer.parseInt(dataRow[0]);
-                int dois = Integer.parseInt(dataRow[1]);
-                int tres = Integer.parseInt(dataRow[2]);
-                int quatro = Integer.parseInt(dataRow[3]);
-                int cinco = Integer.parseInt(dataRow[4]);
-                int seis= Integer.parseInt(dataRow[5]);
-                int sete = Integer.parseInt(dataRow[6]);
-               int oito = Integer.parseInt(dataRow[7]);
-                int nove = Integer.parseInt(dataRow[8]);
-                int dez = Integer.parseInt(dataRow[9]);
-                int onze = Integer.parseInt(dataRow[10]);
-                int doze = Integer.parseInt(dataRow[11]);
-                int treze = Integer.parseInt(dataRow[12]);
-                int quatoze = Integer.parseInt(dataRow[13]);
-                int quise= Integer.parseInt(dataRow[14]);
-                int deseseis = Integer.parseInt(dataRow[15]);
-               int desesete = Integer.parseInt(dataRow[16]);
-                int desoto = Integer.parseInt(dataRow[17]);
-                int desenove = Integer.parseInt(dataRow[18]);
-                 int vinte = Integer.parseInt(dataRow[19]); 
-                 
-                
-                 
-                 
-                int[] meuArray = new int[20];
-               
-        meuArray [0] = um;
-        meuArray [1] = dois;
-        meuArray [2] = tres;
-        meuArray [3] = quatro;
-        meuArray [4] = cinco;
-        meuArray [5] = seis;
-        meuArray [6] = sete;
-        meuArray [7] = oito;
-        meuArray [8] = nove;
-        meuArray [9] = dez;
-        meuArray [10] = onze;
-        meuArray [11] = doze;
-        meuArray [12] = treze;
-        meuArray [13] = quatoze;
-        meuArray [14] = quise;
-        meuArray [15] = deseseis;
-        meuArray [16] = desesete;
-        meuArray [17] = desoto;
-        meuArray [18] = desenove;
-        meuArray [19] = vinte;
-                 
-         
-          int total = um +dois+ tres + quatro + cinco + seis + sete + oito +
-                  nove + dez + onze + doze  + treze + quatoze + quise +deseseis +desesete + desoto +desenove + vinte;
-            //     System.out.print(um);
+JFCadrastro Tela = new JFCadrastro();
+        Tela.setVisible(rootPaneCheckingEnabled);   
 
-              
-               
-               
-                
-                
-           
-
-
-             /*  String um =  jTextField8.getText();
-               String dois = jTextField9.getText();
-               String tres = jTextField10.getText();
-               String quatro = jTextField11.getText();
-               
-               int UM = Integer.parseInt(um);
-               int DOIS = Integer.parseInt(dois);
-               int TRES =  Integer.parseInt(tres);
-               int QUATRO =  Integer.parseInt(quatro);
-               int RESUTADO = UM * DOIS;
-               System.out.print(RESUTADO);
-               jTextField12.setText(""+RESUTADO); */
-             
-            }
-            
-        } catch (Exception ex) {
-            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }     }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1246,6 +1253,8 @@ try {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextpro;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel jldata;

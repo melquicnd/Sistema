@@ -5,6 +5,12 @@
  */
 package visão;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import visão.ClasePrincipal;
 
 /**
@@ -18,7 +24,10 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public TelaLogin() {
         initComponents();
+        
+        jButtonAcessar.setBackground(new java.awt.Color(0,0,0,0));
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,6 +42,8 @@ public class TelaLogin extends javax.swing.JFrame {
         jButtonAcessar = new javax.swing.JButton();
         jTextFieldUsuario = new javax.swing.JTextField();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabelUsuario = new javax.swing.JLabel();
@@ -53,6 +64,9 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jButtonAcessar.setBackground(new java.awt.Color(4, 197, 130));
+        jButtonAcessar.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButtonAcessar.setForeground(java.awt.Color.white);
+        jButtonAcessar.setText("Entrar");
         jButtonAcessar.setBorder(null);
         jButtonAcessar.setBorderPainted(false);
         jButtonAcessar.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +75,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonAcessar);
-        jButtonAcessar.setBounds(340, 390, 122, 27);
+        jButtonAcessar.setBounds(342, 390, 120, 27);
 
         jTextFieldUsuario.setBackground(new java.awt.Color(84, 93, 106));
         jTextFieldUsuario.setBorder(null);
@@ -72,6 +86,16 @@ public class TelaLogin extends javax.swing.JFrame {
         jPasswordFieldSenha.setBorder(null);
         getContentPane().add(jPasswordFieldSenha);
         jPasswordFieldSenha.setBounds(280, 330, 240, 30);
+
+        jTextField1.setAutoscrolls(false);
+        jTextField1.setBorder(null);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(630, 160, 0, 14);
+
+        jTextField2.setAutoscrolls(false);
+        jTextField2.setBorder(null);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(630, 190, 0, 14);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/backgroundTelaLoguinNew.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -96,6 +120,51 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarActionPerformed
+        try {
+             String filePath = ("C:\\Arquivos do programa/DadosLoguin.txt");
+        File file = new File(filePath);
+            
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+          //  DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+          //  model.setColumnIdentifiers(columnsName);
+            
+            
+
+            
+            Object[] tableLines = br.lines().toArray();
+            //model.addRow(tableLines);
+            
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split(";");
+              //  model.addRow(dataRow);
+                jTextField1.setText(dataRow[0]);
+                jTextField2.setText(dataRow[1]);
+        
+         }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(PaginaUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+        String str1 =jTextFieldUsuario.getText();
+        String str2 = jTextField1.getText().substring(1);
+        
+      //  String str1 = "teste";
+        //String str2 = "Oteste".substring(1);
+
+        System.out.println("str1: " + str1 + ", str2: " + str2);
+        if(str1 == str2.intern()) {
+            System.out.println("str1 igual a str2");
+        }
+        else {
+            System.out.println("str1 diferente de str2");
+        }
+    
+        
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true); //se se verdadeiro ele chama a tela 
     }//GEN-LAST:event_jButtonAcessarActionPerformed
@@ -143,6 +212,8 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
 }

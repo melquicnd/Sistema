@@ -34,7 +34,7 @@ public class JFCadrastro extends javax.swing.JFrame {
     public JFCadrastro() {
         initComponents();
         
-        jTxtEndereço.setBackground(new Color(0,0,0,0));
+      //  jTxtEndereço.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -103,7 +103,17 @@ public class JFCadrastro extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
 
         jLabel8.setText("jLabel8");
 
@@ -357,10 +367,12 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtEndereço2);
-        jTxtEndereço2.setBounds(360, 300, 470, 30);
+        jTxtEndereço2.setBounds(330, 310, 430, 20);
 
         jButton1.setBackground(new java.awt.Color(4, 197, 130));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/botao cadastrar.jpg"))); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(java.awt.Color.white);
+        jButton1.setText("Sauvar");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,14 +380,14 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(550, 600, 210, 40);
+        jButton1.setBounds(500, 580, 200, 40);
 
         jTxtRG.setBackground(new java.awt.Color(84, 94, 106));
         jTxtRG.setBorder(null);
         jTxtRG.setForeground(new java.awt.Color(255, 255, 255));
         jTxtRG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##-##-####"))));
         getContentPane().add(jTxtRG);
-        jTxtRG.setBounds(340, 160, 230, 30);
+        jTxtRG.setBounds(320, 170, 200, 30);
 
         jTxtCPF.setBackground(new java.awt.Color(84, 94, 106));
         jTxtCPF.setBorder(null);
@@ -392,33 +404,33 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtCPF);
-        jTxtCPF.setBounds(840, 300, 100, 30);
+        jTxtCPF.setBounds(780, 300, 90, 30);
 
         jTxtTelefone.setBackground(new java.awt.Color(84, 94, 106));
         jTxtTelefone.setBorder(null);
         jTxtTelefone.setForeground(new java.awt.Color(255, 255, 255));
         jTxtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("############"))));
         getContentPane().add(jTxtTelefone);
-        jTxtTelefone.setBounds(360, 390, 280, 30);
+        jTxtTelefone.setBounds(330, 390, 260, 20);
 
         jTxtCelular.setBackground(new java.awt.Color(84, 94, 106));
         jTxtCelular.setBorder(null);
         jTxtCelular.setForeground(new java.awt.Color(255, 255, 255));
         jTxtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#########"))));
         getContentPane().add(jTxtCelular);
-        jTxtCelular.setBounds(660, 390, 281, 30);
+        jTxtCelular.setBounds(610, 390, 260, 20);
 
         jTxtBairro.setBackground(new java.awt.Color(84, 94, 106));
         jTxtBairro.setForeground(new java.awt.Color(255, 255, 255));
         jTxtBairro.setBorder(null);
         getContentPane().add(jTxtBairro);
-        jTxtBairro.setBounds(660, 244, 280, 30);
+        jTxtBairro.setBounds(610, 250, 260, 30);
 
         jTxtEmail.setBackground(new java.awt.Color(82, 94, 108));
         jTxtEmail.setForeground(new java.awt.Color(255, 255, 255));
         jTxtEmail.setBorder(null);
         getContentPane().add(jTxtEmail);
-        jTxtEmail.setBounds(340, 100, 458, 30);
+        jTxtEmail.setBounds(320, 120, 420, 20);
 
         jTxtObiservaçoes.setBackground(new java.awt.Color(84, 94, 106));
         jTxtObiservaçoes.setForeground(new java.awt.Color(255, 255, 255));
@@ -429,7 +441,7 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtObiservaçoes);
-        jTxtObiservaçoes.setBounds(340, 460, 620, 101);
+        jTxtObiservaçoes.setBounds(320, 450, 560, 101);
 
         jTxtNome.setBackground(new java.awt.Color(82, 94, 108));
         jTxtNome.setForeground(new java.awt.Color(255, 255, 255));
@@ -440,7 +452,7 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtNome);
-        jTxtNome.setBounds(340, 32, 469, 30);
+        jTxtNome.setBounds(320, 60, 430, 20);
 
         jTxtEndereço.setBackground(new java.awt.Color(84, 94, 106));
         jTxtEndereço.setForeground(new java.awt.Color(255, 255, 255));
@@ -451,62 +463,103 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtEndereço);
-        jTxtEndereço.setBounds(360, 240, 280, 30);
+        jTxtEndereço.setBounds(330, 250, 260, 30);
 
         jLabel18.setBackground(java.awt.Color.white);
         jLabel18.setForeground(java.awt.Color.white);
         jLabel18.setText("Nome:");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(350, 10, 140, 14);
+        jLabel18.setBounds(320, 40, 140, 14);
 
         jLabel19.setForeground(java.awt.Color.white);
         jLabel19.setText("Obiservações:");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(350, 430, 140, 14);
+        jLabel19.setBounds(320, 420, 140, 20);
 
         jLabel20.setForeground(java.awt.Color.white);
         jLabel20.setText("Email:");
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(350, 74, 170, 20);
+        jLabel20.setBounds(320, 90, 170, 20);
 
         jLabel21.setForeground(java.awt.Color.white);
         jLabel21.setText("Data de Aniversário:");
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(350, 134, 150, 20);
+        jLabel21.setBounds(320, 150, 150, 20);
 
         jLabel22.setForeground(java.awt.Color.white);
         jLabel22.setText("WhatsApp:");
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(360, 364, 120, 20);
+        jLabel22.setBounds(330, 360, 120, 20);
 
         jLabel23.setForeground(java.awt.Color.white);
         jLabel23.setText("Celular:");
         getContentPane().add(jLabel23);
-        jLabel23.setBounds(660, 370, 140, 14);
+        jLabel23.setBounds(610, 364, 140, 20);
 
         jLabel24.setForeground(java.awt.Color.white);
         jLabel24.setText("Cidade:");
         getContentPane().add(jLabel24);
-        jLabel24.setBounds(360, 220, 140, 14);
+        jLabel24.setBounds(330, 230, 140, 14);
 
         jLabel25.setForeground(java.awt.Color.white);
         jLabel25.setText("Bairro:");
         getContentPane().add(jLabel25);
-        jLabel25.setBounds(660, 220, 170, 14);
+        jLabel25.setBounds(610, 230, 170, 14);
 
         jLabel26.setForeground(java.awt.Color.white);
         jLabel26.setText("Rua:");
         getContentPane().add(jLabel26);
-        jLabel26.setBounds(360, 280, 170, 14);
+        jLabel26.setBounds(330, 284, 170, 20);
 
         jLabel27.setForeground(java.awt.Color.white);
         jLabel27.setText("Numero:");
         getContentPane().add(jLabel27);
-        jLabel27.setBounds(840, 280, 80, 14);
+        jLabel27.setBounds(780, 284, 80, 20);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/22-min.png"))); // NOI18N
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel30);
+        jLabel30.setBounds(880, 0, 390, 20);
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/22-min text.png"))); // NOI18N
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(0, -8, 1270, 680);
+        jLabel17.setBounds(0, -8, 1200, 680);
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel28);
+        jLabel28.setBounds(1200, -6, 80, 510);
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        jLabel29.setText("jLabel29");
+        getContentPane().add(jLabel29);
+        jLabel29.setBounds(1200, 500, 80, 160);
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel31);
+        jLabel31.setBounds(0, 0, 390, 20);
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel32);
+        jLabel32.setBounds(390, 0, 390, 20);
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel33);
+        jLabel33.setBounds(780, 0, 390, 20);
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel34);
+        jLabel34.setBounds(820, 640, 390, 20);
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel35);
+        jLabel35.setBounds(430, 640, 390, 20);
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel36);
+        jLabel36.setBounds(40, 640, 390, 20);
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel37);
+        jLabel37.setBounds(0, 640, 390, 20);
 
         setSize(new java.awt.Dimension(1290, 701));
         setLocationRelativeTo(null);
@@ -679,7 +732,17 @@ public class JFCadrastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

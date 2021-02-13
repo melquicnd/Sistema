@@ -38,12 +38,34 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
         initComponents();
         
         
+        
+        
         jButton1.setBackground(new java.awt.Color(0,0,0,0));
         jButton2.setBackground(new java.awt.Color(0,0,0,0));
         jButton3.setBackground(new java.awt.Color(0,0,0,0));
         jButton4.setBackground(new java.awt.Color(0,0,0,0));
         jButton5.setBackground(new java.awt.Color(0,0,0,0));
        // jPanel6.setBackground(new java.awt.Color(0,0,0,0));
+ 
+    }
+    
+    private void calcular()
+    {
+        
+     // fuçao para caucular o subtotal 
+        float suma = 0;
+        for( int i = 0; i < jTable1.getRowCount(); i++)
+        {
+            float renglon;
+            renglon = Float.parseFloat(jTable1.getValueAt(i, 0).toString());
+            
+            suma = suma + renglon;
+            
+        }
+
+         jLabel68.setText(String.valueOf(suma));
+         jTextField2.setText(String.valueOf(suma));
+  
     }
 
     /**
@@ -83,6 +105,9 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jTextField2 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtPiorHora2 = new javax.swing.JLabel();
 
@@ -292,10 +317,34 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
         jButton3.setBorder(null);
         getContentPane().add(jButton3);
         jButton3.setBounds(100, 360, 170, 30);
+
+        jTextField1.setBorder(null);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(250, 80, 120, 30);
+        jTextField1.setBounds(250, 80, 0, 30);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(0, 700, 10, 0);
+
+        jTextField2.setBorder(null);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(340, 510, 0, 40);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/5.png"))); // NOI18N
+        jLabel11.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel11MouseMoved(evt);
+            }
+        });
         getContentPane().add(jLabel11);
         jLabel11.setBounds(0, 4, 1300, 700);
 
@@ -308,15 +357,16 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-try{
+
+        try{
              String filePath = ("C:\\Arquivos do programa/ValorTotal.txt");
         File file = new File(filePath);
             
             BufferedReader br = new BufferedReader(new FileReader(file));
             String firstLine = br.readLine().trim();
             String[] columnsName = firstLine.split(",");
-        //    DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
-          //  model.setColumnIdentifiers(columnsName);
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            model.setColumnIdentifiers(columnsName);
             
               
             Object[] tableLines = br.lines().toArray();
@@ -327,9 +377,7 @@ try{
                 String line = tableLines[i].toString().trim();
                 String[] dataRow = line.split(";");
             //    integer[] valoresint = new integer(dataRow.length);
-                
-                
-              //  model.addRow(dataRow);
+                model.addRow(dataRow);
                 
                 
               
@@ -337,27 +385,86 @@ try{
                 
                 
                 int[] a = new int[20];
+                String varifica  = dataRow[0];
+                String res1 = varifica.split("\\.")[0];
                 
-                int um = Integer.parseInt(dataRow[0]);
-                int dois = Integer.parseInt(dataRow[1]);
-                int tres = Integer.parseInt(dataRow[2]);
-                int quatro = Integer.parseInt(dataRow[3]);
-                int cinco = Integer.parseInt(dataRow[4]);
-                int seis = Integer.parseInt(dataRow[5]);
-                int sete =  Integer.parseInt(dataRow[6]);
-               int oito = Integer.parseInt(dataRow[7]);
-                int nove = Integer.parseInt(dataRow[8]);
-                int dez = Integer.parseInt(dataRow[9]);
-                int onze = Integer.parseInt(dataRow[10]);
-                int doze  = Integer.parseInt(dataRow[11]);
-                int treze = Integer.parseInt(dataRow[12]);
-                int quatorze  = Integer.parseInt(dataRow[13]);
-                int quise  = Integer.parseInt(dataRow[14]);
-                int deseseis = Integer.parseInt(dataRow[15]);
-                int desesete = Integer.parseInt(dataRow[16]);
-                int desoto  = Integer.parseInt(dataRow[17]);
-                int desenove  = Integer.parseInt(dataRow[18]);
-                int vinte = Integer.parseInt(dataRow[19]); 
+                String varifica2  = dataRow[1];
+                String res2 = varifica2.split("\\.")[0];
+                
+                String varifica3  = dataRow[2];
+                String res3 = varifica3.split("\\.")[0];
+                
+                String varifica4  = dataRow[3];
+                String res4 = varifica4.split("\\.")[0];
+                
+                String varifica5  = dataRow[4];
+                String res5 = varifica5.split("\\.")[0];
+                
+                String varifica6  = dataRow[5];
+                String res6 = varifica6.split("\\.")[0];
+                
+                String varifica7  = dataRow[6];
+                String res7 = varifica7.split("\\.")[0];
+                
+                String varifica8  = dataRow[7];
+                String res8 = varifica8.split("\\.")[0];
+                
+                String varifica9  = dataRow[8];
+                String res9 = varifica9.split("\\.")[0];
+                
+                String varifica10  = dataRow[9];
+                String res10 = varifica10.split("\\.")[0];
+                
+                String varifica11  = dataRow[10];
+                String res11 = varifica11.split("\\.")[0];
+                
+                String varifica12  = dataRow[11];
+                String res12 = varifica12.split("\\.")[0];
+                
+                String varifica13  = dataRow[12];
+                String res13 = varifica13.split("\\.")[0];
+                
+                String varifica14  = dataRow[13];
+                String res14 = varifica14.split("\\.")[0];
+                
+                String varifica15  = dataRow[14];
+                String res15 = varifica15.split("\\.")[0];
+                
+                String varifica16  = dataRow[15];
+                String res16 = varifica16.split("\\.")[0];
+                
+                String varifica17  = dataRow[16];
+                String res17 = varifica17.split("\\.")[0];
+                
+                String varifica18  = dataRow[17];
+                String res18 = varifica18.split("\\.")[0];
+                
+                String varifica19  = dataRow[18];
+                String res19 = varifica19.split("\\.")[0];
+                
+                String varifica20  = dataRow[19];
+                String res20 = varifica20.split("\\.")[0];
+                
+                int um = Integer.parseInt(res1);
+                int dois = Integer.parseInt(res2);
+                int tres = Integer.parseInt(res3);
+                int quatro = Integer.parseInt(res4);
+                int cinco = Integer.parseInt(res5);
+                int seis = Integer.parseInt(res6);
+                int sete =  Integer.parseInt(res7);
+               int oito = Integer.parseInt(res8);
+                int nove = Integer.parseInt(res9);
+                int dez = Integer.parseInt(res10);
+                int onze = Integer.parseInt(res11);
+                int doze  = Integer.parseInt(res12);
+                int treze = Integer.parseInt(res13);
+                int quatorze  = Integer.parseInt(res14);
+                int quise  = Integer.parseInt(res15);
+                int deseseis = Integer.parseInt(res16);
+                int desesete = Integer.parseInt(res17);
+                int desoto  = Integer.parseInt(res18);
+                int desenove  = Integer.parseInt(res19);
+                int vinte = Integer.parseInt(res20); 
                 
                
             int[] meuArray = new int[10];
@@ -366,6 +473,8 @@ try{
                 //NAO TEM ZERO
                 meuArray[0] = um;                   
                 }else{} 
+                
+                
                 
                 if(dois != 0){
                 //NAO TEM ZERO
@@ -499,14 +608,14 @@ try{
               
               if(bloco != 20){
                    //18
-                   jLabel68.setText(""+total1);
+                //   jLabel68.setText(""+total1);
 
                }else{
                    //20
                    
                   int total = um +dois+ tres + quatro + cinco + seis + sete + oito +
                   nove + dez + onze + doze  + treze + quatorze + quise +deseseis +desesete + desoto +desenove + vinte;
-                   jLabel68.setText(""+total);
+                  // jLabel68.setText(""+total);
                } 
                
           
@@ -813,6 +922,12 @@ try{
                 Logger.getLogger(TelaRelatorioCistema.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        //metodo de caucular o total
+        calcular();
+        
+        
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -825,6 +940,13 @@ try{
 
         
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jLabel11MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseMoved
+        // TODO add your handling code here:
+         //metodo de caucular o total
+          calcular();
+        
+    }//GEN-LAST:event_jLabel11MouseMoved
 
     /**
      * @param args the command line arguments
@@ -889,7 +1011,10 @@ try{
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel txtMelhorHora;
     private javax.swing.JLabel txtPiorHora2;
     // End of variables declaration//GEN-END:variables

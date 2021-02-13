@@ -200,8 +200,8 @@ public class RegistroDeCompra {
         
             FileWriter fw = new FileWriter("C:\\Arquivos do programa/ValorTotal.txt", true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.print(this.resutado+";");
-            pw.print("0;");
+            pw.println(this.resutado+";0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;");
+            //pw.println("0;0;0;0;4;1;0;0;56;0;0;0;0;0;4;0;0;0;0;0;");
             pw.close();
         } catch (Exception ex) {
             Logger.getLogger(RegistroDeCompra.class.getName()).log(Level.SEVERE, null, ex);

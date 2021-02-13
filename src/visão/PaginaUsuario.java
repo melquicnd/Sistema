@@ -79,7 +79,9 @@ public class PaginaUsuario extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jTextField9 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setAutoRequestFocus(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -111,7 +113,7 @@ public class PaginaUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtPesquisa);
-        jTxtPesquisa.setBounds(340, 60, 700, 40);
+        jTxtPesquisa.setBounds(350, 60, 690, 40);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setBorder(null);
@@ -259,6 +261,10 @@ public class PaginaUsuario extends javax.swing.JFrame {
         getContentPane().add(jTextField9);
         jTextField9.setBounds(180, 130, 0, 30);
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(1260, 0, 40, 350);
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/3 supla.png"))); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -272,6 +278,10 @@ public class PaginaUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 1260, 700);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/azul.jpg"))); // NOI18N
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(1260, 350, 40, 350);
 
         setSize(new java.awt.Dimension(1315, 739));
         setLocationRelativeTo(null);
@@ -672,7 +682,7 @@ if (evt.getClickCount() == 2 ) {
                   
             if(linha.equals("1/"+nome+"/"+hora+"/0/0"+"/"+endereco+"/"+bairo+"/"+cpf+"/"+rg+"/"+emaill+"/"+telefone+"/"+celular+"/"+obiserva+"/"+cidade) == false){
                 salvar.add(linha);
-              //  JOptionPane.showMessageDialog(null, "1/"+nome+"/"+hora+"/0/0"+"/"+endereco+"/"+bairo+"/"+cpf+"/"+rg+"/"+emaill+"/"+telefone+"/"+celular+"/"+obiserva+"/"+cidade);
+                JOptionPane.showMessageDialog(null, "1/"+nome+"/"+hora+"/0/0"+"/"+endereco+"/"+bairo+"/"+cpf+"/"+rg+"/"+emaill+"/"+telefone+"/"+celular+"/"+obiserva+"/"+cidade);
             }
             linha = br.readLine();
         }
@@ -766,6 +776,8 @@ if (evt.getClickCount() == 2 ) {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
