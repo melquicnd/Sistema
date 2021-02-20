@@ -106,9 +106,11 @@ public class frm_GuardarDados extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jMenu1 = new javax.swing.JMenu();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         cbo_Tipo = new javax.swing.JComboBox<>();
+        jButton3 = new javax.swing.JButton();
         cbo_Edad = new javax.swing.JComboBox<>();
         txt_Codigo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -160,6 +162,8 @@ public class frm_GuardarDados extends javax.swing.JFrame {
 
         jLabel10.setText("jLabel10");
 
+        jMenu1.setText("jMenu1");
+
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -188,7 +192,7 @@ public class frm_GuardarDados extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(420, 140, 610, 330);
+        jScrollPane1.setBounds(500, 130, 570, 330);
 
         cbo_Tipo.setToolTipText("");
         cbo_Tipo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -200,7 +204,15 @@ public class frm_GuardarDados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbo_Tipo);
-        cbo_Tipo.setBounds(230, 370, 90, 20);
+        cbo_Tipo.setBounds(280, 300, 90, 20);
+
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(160, 370, 20, 20);
 
         cbo_Edad.setToolTipText("");
         cbo_Edad.setBorder(null);
@@ -210,12 +222,12 @@ public class frm_GuardarDados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbo_Edad);
-        cbo_Edad.setBounds(360, 580, 200, 30);
+        cbo_Edad.setBounds(450, 620, 200, 30);
 
         txt_Codigo.setBackground(new java.awt.Color(84, 94, 106));
         txt_Codigo.setBorder(null);
         getContentPane().add(txt_Codigo);
-        txt_Codigo.setBounds(350, 630, 250, 30);
+        txt_Codigo.setBounds(430, 650, 250, 30);
 
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +236,7 @@ public class frm_GuardarDados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(990, 70, 60, 50);
+        jButton1.setBounds(1110, 60, 60, 50);
 
         btn_MostarLista.setBorder(null);
         btn_MostarLista.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +245,7 @@ public class frm_GuardarDados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_MostarLista);
-        btn_MostarLista.setBounds(240, 200, 70, 60);
+        btn_MostarLista.setBounds(290, 160, 70, 60);
 
         jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +254,7 @@ public class frm_GuardarDados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(420, 80, 540, 30);
+        jTextField1.setBounds(520, 80, 540, 30);
 
         btn_Guardar.setText("Guardar");
         btn_Guardar.setBorder(null);
@@ -252,11 +264,11 @@ public class frm_GuardarDados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_Guardar);
-        btn_Guardar.setBounds(900, 620, 90, 30);
+        btn_Guardar.setBounds(690, 640, 90, 30);
 
         txt_Nombre.setBorder(null);
         getContentPane().add(txt_Nombre);
-        txt_Nombre.setBounds(300, 530, 510, 30);
+        txt_Nombre.setBounds(380, 590, 510, 30);
 
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +277,7 @@ public class frm_GuardarDados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(230, 290, 80, 60);
+        jButton2.setBounds(280, 230, 80, 60);
 
         jTextField2.setBorder(null);
         getContentPane().add(jTextField2);
@@ -284,9 +296,9 @@ public class frm_GuardarDados extends javax.swing.JFrame {
         getContentPane().add(jTextField4);
         jTextField4.setBounds(0, 170, 0, 14);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/7.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Meu negócio - V1.png"))); // NOI18N
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(0, 0, 1300, 700);
+        jLabel12.setBounds(0, 0, 1313, 700);
 
         setSize(new java.awt.Dimension(1316, 739));
         setLocationRelativeTo(null);
@@ -590,6 +602,13 @@ public class frm_GuardarDados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       
+        SenhaHistorico tela = new SenhaHistorico();
+        tela.setVisible(true); //se se verdadeiro ele chama a tela
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -632,6 +651,7 @@ public class frm_GuardarDados extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbo_Tipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -644,6 +664,7 @@ public class frm_GuardarDados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

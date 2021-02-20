@@ -1545,7 +1545,7 @@ public class PerfilDoCliente extends javax.swing.JFrame {
         jLabel49.setBounds(100, 504, 100, 30);
 
         jLabel30.setForeground(java.awt.Color.white);
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/8.png"))); // NOI18N
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Perfil do cliente - V1.png"))); // NOI18N
         jLabel30.setText("jLabel30");
         jLabel30.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {

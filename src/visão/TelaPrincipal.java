@@ -125,10 +125,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jldata.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jldata.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -226,17 +226,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel12.setText("Total de Cliente");
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("Total de Clientes");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(610, 60, 75, 14);
+        jLabel12.setBounds(620, 70, 120, 17);
 
+        jButton8.setToolTipText("Relátorios");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(120, 490, 80, 80);
+        jButton8.setBounds(90, 500, 80, 80);
 
         jtTabelaP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -254,28 +256,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jtTabelaP);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(410, 380, 670, 280);
+        jScrollPane1.setBounds(430, 390, 660, 280);
 
+        txT_Total.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         txT_Total.setText("0");
         getContentPane().add(txT_Total);
-        txT_Total.setBounds(610, 110, 80, 40);
+        txT_Total.setBounds(660, 120, 20, 40);
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("Faturamento");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(780, 60, 62, 14);
+        jLabel14.setBounds(790, 70, 100, 17);
 
+        txT_Faturamento.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         txT_Faturamento.setText("0");
         getContentPane().add(txT_Faturamento);
-        txT_Faturamento.setBounds(770, 120, 90, 14);
+        txT_Faturamento.setBounds(830, 120, 19, 40);
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton5.setToolTipText("Pesquisar Clientes");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(1010, 270, 70, 70);
+        jButton5.setBounds(1010, 290, 80, 80);
 
         jTextpro.setBackground(new java.awt.Color(83, 93, 106));
         jTextpro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -286,61 +292,68 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextpro);
-        jTextpro.setBounds(440, 290, 530, 40);
+        jTextpro.setBounds(450, 310, 520, 40);
 
+        jButtonNegocio.setToolTipText("Configurações");
         jButtonNegocio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNegocioActionPerformed(evt);
             }
         });
         getContentPane().add(jButtonNegocio);
-        jButtonNegocio.setBounds(1170, 620, 80, 70);
+        jButtonNegocio.setBounds(1240, 610, 80, 70);
 
+        jButton4.setToolTipText("Lista Completa De Clientes");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(120, 290, 80, 80);
+        jButton4.setBounds(90, 290, 80, 80);
 
         jButton3.setForeground(new java.awt.Color(153, 255, 255));
+        jButton3.setToolTipText("Adicionar Cliente");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(120, 190, 80, 80);
+        jButton3.setBounds(90, 190, 80, 80);
 
+        jToggleButton1.setToolTipText("Meus Produtos");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jToggleButton1);
-        jToggleButton1.setBounds(120, 590, 80, 80);
+        jToggleButton1.setBounds(90, 600, 80, 80);
 
+        jButton1.setToolTipText("Lista De Clientes VIP's");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(120, 390, 80, 80);
+        jButton1.setBounds(90, 400, 80, 80);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fundinho.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(1320, -100, 120, 1400);
 
-        jLabel15.setText("Total de pedidos");
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setText("Total de Pedidos");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(450, 60, 90, 14);
+        jLabel15.setBounds(450, 70, 130, 14);
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel16.setText("0");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(460, 120, 60, 14);
+        jLabel16.setBounds(500, 120, 20, 40);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -364,21 +377,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(940, 180, 1, 1);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Tela inicial - 1300x700.png"))); // NOI18N
-        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel1MouseMoved(evt);
-            }
-        });
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-190, 0, 1730, 680);
-
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fundinho.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(120, 670, 1400, 1220);
@@ -392,6 +390,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel8.setText("jLabel8");
         getContentPane().add(jLabel8);
         jLabel8.setBounds(-10, -6, 40, 690);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Tela Principal - V1.png"))); // NOI18N
+        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel1MouseMoved(evt);
+            }
+        });
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-190, 0, 1730, 700);
 
         setSize(new java.awt.Dimension(1348, 738));
         setLocationRelativeTo(null);
@@ -854,7 +867,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButtonNegocioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNegocioActionPerformed
-        MeuNegocio Tela = new MeuNegocio();
+        Configuracoes Tela = new Configuracoes ();
         Tela.setVisible(rootPaneCheckingEnabled); 
     }//GEN-LAST:event_jButtonNegocioActionPerformed
 

@@ -153,25 +153,25 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addContainerGap()
                         .addComponent(jLabel3))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(65, 65, 65)
                         .addComponent(jLabel2)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel2)
-                .addGap(28, 28, 28)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(400, 70, 180, 200);
+        jPanel3.setBounds(500, 40, 160, 190);
 
         jPanel4.setBackground(java.awt.Color.white);
 
@@ -188,28 +188,33 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel4))
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel5))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel5)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel4)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel4)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addGap(61, 61, 61))
+                .addGap(43, 43, 43))
         );
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(660, 60, 190, 210);
+        jPanel4.setBounds(710, 40, 160, 190);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("Geral");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(90, 190, 182, 40);
 
@@ -231,84 +236,96 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jLabel68)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel68)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jLabel68)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel7)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(930, 60, 180, 220);
+        jPanel5.setBounds(920, 40, 160, 190);
 
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("jLabel20");
         getContentPane().add(jLabel20);
         jLabel20.setBounds(1040, 540, 40, 14);
 
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("jLabel21");
         getContentPane().add(jLabel22);
         jLabel22.setBounds(1040, 620, 40, 14);
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("jLabel9");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(630, 370, 80, 20);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Melhor dia da semana   =");
         getContentPane().add(jLabel8);
         jLabel8.setBounds(424, 362, 190, 30);
 
+        txtMelhorHora.setForeground(new java.awt.Color(255, 255, 255));
         txtMelhorHora.setText("jLabel9");
         getContentPane().add(txtMelhorHora);
         txtMelhorHora.setBounds(660, 450, 70, 20);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Melhor hora de compras   =");
         getContentPane().add(jLabel10);
         jLabel10.setBounds(430, 450, 222, 20);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Cliente que mais pediu   =");
         getContentPane().add(jLabel17);
         jLabel17.setBounds(430, 540, 224, 22);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Nome ...");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(660, 540, 374, 22);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Cliente que mais pagou   =");
         getContentPane().add(jLabel19);
         jLabel19.setBounds(430, 602, 216, 40);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Nome ...");
         getContentPane().add(jLabel21);
         jLabel21.setBounds(660, 610, 380, 22);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Pior dia   =");
         getContentPane().add(jLabel12);
         jLabel12.setBounds(840, 360, 198, 22);
 
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("jLabel9");
         getContentPane().add(jLabel13);
         jLabel13.setBounds(1060, 360, 34, 30);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Pior hora   = ");
         getContentPane().add(jLabel16);
         jLabel16.setBounds(840, 450, 192, 22);
@@ -339,14 +356,14 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
         getContentPane().add(jTextField2);
         jTextField2.setBounds(340, 510, 0, 40);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/5.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Relatorios - V1.png"))); // NOI18N
         jLabel11.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabel11MouseMoved(evt);
             }
         });
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(0, 4, 1300, 700);
+        jLabel11.setBounds(20, 0, 1300, 700);
 
         txtPiorHora2.setText("jLabel9");
         getContentPane().add(txtPiorHora2);
@@ -947,6 +964,10 @@ public class TelaRelatorioCistema extends javax.swing.JFrame {
           calcular();
         
     }//GEN-LAST:event_jLabel11MouseMoved
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

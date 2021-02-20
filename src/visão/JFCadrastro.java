@@ -372,7 +372,7 @@ public class JFCadrastro extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(4, 197, 130));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(java.awt.Color.white);
-        jButton1.setText("Sauvar");
+        jButton1.setText("Salvar");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -380,14 +380,14 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(500, 580, 200, 40);
+        jButton1.setBounds(490, 570, 220, 60);
 
         jTxtRG.setBackground(new java.awt.Color(84, 94, 106));
         jTxtRG.setBorder(null);
         jTxtRG.setForeground(new java.awt.Color(255, 255, 255));
         jTxtRG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##-##-####"))));
         getContentPane().add(jTxtRG);
-        jTxtRG.setBounds(320, 170, 200, 30);
+        jTxtRG.setBounds(320, 180, 200, 20);
 
         jTxtCPF.setBackground(new java.awt.Color(84, 94, 106));
         jTxtCPF.setBorder(null);
@@ -404,7 +404,7 @@ public class JFCadrastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtCPF);
-        jTxtCPF.setBounds(780, 300, 90, 30);
+        jTxtCPF.setBounds(780, 310, 90, 20);
 
         jTxtTelefone.setBackground(new java.awt.Color(84, 94, 106));
         jTxtTelefone.setBorder(null);
@@ -472,7 +472,7 @@ public class JFCadrastro extends javax.swing.JFrame {
         jLabel18.setBounds(320, 40, 140, 14);
 
         jLabel19.setForeground(java.awt.Color.white);
-        jLabel19.setText("Obiservações:");
+        jLabel19.setText("Observações:");
         getContentPane().add(jLabel19);
         jLabel19.setBounds(320, 420, 140, 20);
 
@@ -512,7 +512,7 @@ public class JFCadrastro extends javax.swing.JFrame {
         jLabel26.setBounds(330, 284, 170, 20);
 
         jLabel27.setForeground(java.awt.Color.white);
-        jLabel27.setText("Numero:");
+        jLabel27.setText("Número:");
         getContentPane().add(jLabel27);
         jLabel27.setBounds(780, 284, 80, 20);
 

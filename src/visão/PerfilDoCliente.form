@@ -2378,7 +2378,7 @@
           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/image/8.png"/>
+          <Image iconType="3" name="/image/Perfil do cliente - V1.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel30"/>
       </Properties>
